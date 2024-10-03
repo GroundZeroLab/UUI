@@ -10,25 +10,30 @@
 	<span class="switch">
 		<span class="circle" />
 	</span>
+	<slot />
 </label>
 
 <style>
+	.sm {
+		zoom: 0.65;
+	}
 
-  .sm{
-    zoom: 0.65;
-  }
+	.md {
+		zoom: 0.8;
+	}
 
-  .md{
-    zoom: 0.8;
-  }
-
-  .lg{
-    zoom: 0.95;
-  }
+	.lg {
+		zoom: 0.95;
+	}
 
 	label {
 		width: fit-content;
 		height: 25px;
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 1.2rem;
+		color: var(--pure);
 	}
 	.switch {
 		display: inline-block;

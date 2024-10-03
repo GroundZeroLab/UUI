@@ -1,4 +1,10 @@
 :root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --font-size-sm: 0.75rem;
+  --font-size-md: 0.88rem;
+  --font-size-lg: 1.1rem;
+
   /* Light theme colors */
   --bg-color: #ffffff;
   --bg-color-hover: #f6f8fa;
@@ -7,15 +13,25 @@
 
   --pure: black;
 
-
-  --focus-color: #0366d6;
+  --focus-color: #004ca3;
 
   --text-color: #24292e;
+  --text-color-light: #586069;
+  --text-color-lighter: #6a737d;
 
-  --primary-color: #0366d6;
+  --primary-color: rgb(31, 111, 235);
   --secondary-color: #337ed3;
 
   --border-color: #e1e4e8;
+
+  --danger: #d73a49;
+  --danger-light: #d4515e;
+  --success: #28a745;
+  --success-light: #3fb950;
+  --warning: #ffd33d;
+  --warning-light: #ffdf5d;
+  --info: #0366d6;
+  --info-light: #1f7ee4;
 }
 
 
@@ -32,8 +48,12 @@
     --button-text-color: #0d1117;
 
     --text-color: #c9d1d9;
+    --text-color-light: #8b949e;
+    --text-color-lighter: #6e7681;
 
-    --primary-color: #58a6ff;
+    /* --primary-color: #58a6ff; */
+    --primary-color: rgb(31, 111, 235);
+
     --secondary-color: #161b22;
 
     --border-color: #30363d;
@@ -45,6 +65,7 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-size: var(--font-size-md);
 }
 
 .container {
@@ -52,4 +73,13 @@ body {
   border: 1px solid var(--border-color);
   padding: 20px;
   border-radius: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }

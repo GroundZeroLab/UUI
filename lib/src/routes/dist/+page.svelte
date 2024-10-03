@@ -1,15 +1,15 @@
 <script lang="ts">
-	import '$lib/main.css';
-	import Button from '$lib/input/Button.svelte';
-	import Switch from '$lib/input/Switch.svelte';
-	import Text from '$lib/input/Text.svelte';
-	import Card from '$lib/box/Card.svelte';
-	import ListItem from '$lib/list/ListItem.svelte';
-	import List from '$lib/list/List.svelte';
-	import Accordion from '$lib/box/Accordion.svelte';
-	import Loading from '$lib/gauche/Loading.svelte';
-	import ProgressBar from '$lib/gauche/ProgressBar.svelte';
-	import Tooltip from '$lib/extra/Tooltip.svelte';
+	import "../../../dist/main.css";
+	import Button from '../../../dist/input/Button.svelte';
+	import Switch from '../../../dist/input/Switch.svelte';
+	import Text from '../../../dist/input/Text.svelte';
+	import Card from '../../../dist/box/Card.svelte';
+	import ListItem from '../../../dist/list/ListItem.svelte';
+	import List from '../../../dist/list/List.svelte';
+	import Accordion from '../../../dist/box/Accordion.svelte';
+	import Loading from '../../../dist/gauche/Loading.svelte';
+	import ProgressBar from '../../../dist/gauche/ProgressBar.svelte';
+	import Tooltip from '../../../dist/extra/Tooltip.svelte';
 
 	let checked = true;
 	let value = '';
