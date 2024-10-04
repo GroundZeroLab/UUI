@@ -1,0 +1,42 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+      packages: write
+
+    steps:
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Setup .npmrc
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+          # Defaults to the user or organization that owns the workflow file
+          scope: '@gzlab'
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        working-directory: ./lib
+        run: bun install
+
+      - name: Build (Bun)
+        working-directory: ./lib
+        run: bun run build
+
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

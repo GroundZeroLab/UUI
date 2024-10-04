@@ -1,58 +1,76 @@
-# create-svelte
+# UUI
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Description
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+**UUI** (Unified User Interface) is a Svelte library designed to simplify and accelerate the creation of user interfaces. With UUI, you can easily build consistent, reusable UI components that seamlessly integrate into your Svelte projects. Whether you're building complex web apps or small projects, UUI offers a robust foundation to get started quickly.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Reusable Components**: A wide array of customizable, reusable Svelte components to streamline UI development.
+- **Effortless Styling**: Easy-to-style components that fit your design language, making your UI look polished and consistent.
+- **Real-time Development**: Quickly set up a development server with hot-reloading to preview changes instantly.
+- **Lightweight and Fast**: Built with performance in mind, leveraging Svelte's compiled nature for highly optimized code.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Installation
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To get started, install UUI with your preferred package manager:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install @uui/svelte
+# OR
+pnpm add @uui/svelte
+# OR
+yarn add @uui/svelte
+# OR
+npm install @uui/svelte 
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Getting Started
 
-## Building
+Once installed, you can start using UUI components in your Svelte project. Here’s a quick example:
 
-To build your library:
+### Basic Usage
+
+```svelte
+<script>
+  import { Button } from '@uui/svelte/input/Button.svelte';
+</script>
+
+<Button onClick={() => alert('Button clicked!')}>
+  Click Me!
+</Button>
+```
+
+This example demonstrates how easy it is to import and use a component from UUI. Customize it as needed to fit your design.
+
+## Documentation
+
+For full documentation and examples, visit the [official UUI docs](#) (link to be added). There you'll find detailed instructions for every component, configuration options, and customization guides.
+
+## Development
+
+If you'd like to contribute or modify UUI components, clone the repository and run the development server:
 
 ```bash
-npm run package
+git clone https://github.com/GroundZeroTool/UUI.git
+cd UUI/lib
+bun dev  # OR pnpm dev / npm run dev
 ```
 
-To create a production version of your showcase app:
+This will launch a development server, where you can see your changes in real-time.
+
+## Build
+
+To build the library for production or publishing:
 
 ```bash
-npm run build
+bun build  # OR pnpm build / npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+This will compile your components, ready to be published on npm.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Contributing
 
-## Publishing
+## License
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+UUI is licensed under the [MIT License](#). See the LICENSE file for more details.
