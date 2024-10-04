@@ -16,13 +16,13 @@
 To get started, install UUI with your preferred package manager:
 
 ```bash
-bun install @uui/svelte
+bun install @gzlab/uui
 # OR
-pnpm add @uui/svelte
+pnpm add @gzlab/uui
 # OR
-yarn add @uui/svelte
+yarn add @gzlab/uui
 # OR
-npm install @uui/svelte 
+npm install @gzlab/uui
 ```
 
 ## Getting Started
@@ -52,7 +52,7 @@ For full documentation and examples, visit the [official UUI docs](#) (link to b
 If you'd like to contribute or modify UUI components, clone the repository and run the development server:
 
 ```bash
-git clone https://github.com/GroundZeroTool/UUI.git
+git clone https://github.com/GroundZeroLab/UUI
 cd UUI/lib
 bun dev  # OR pnpm dev / npm run dev
 ```
@@ -68,8 +68,6 @@ bun build  # OR pnpm build / npm run build
 ```
 
 This will compile your components, ready to be published on npm.
-
-## Contributing
 
 ## License
 
