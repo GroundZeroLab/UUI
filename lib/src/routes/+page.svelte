@@ -10,9 +10,12 @@
 	import Loading from '$lib/gauche/Loading.svelte';
 	import ProgressBar from '$lib/gauche/ProgressBar.svelte';
 	import Tooltip from '$lib/extra/Tooltip.svelte';
+	import Numer from '$lib/input/Numeric.svelte';
+	import Char from '$lib/input/Char.svelte';
 
 	let checked = true;
 	let value = '';
+	let numberValue = 0;
 	let clicked = false;
 	let selectMode = false;
 	let progress = 0;
@@ -39,34 +42,48 @@
 </script>
 
 <div class="groups">
-	<div class="group">
-		<h2>Button - {clicked}</h2>
-		<div class="break" />
-		<Button primary={false} size="lg" {onClick}>Secondary</Button>
-		<Button primary size="md" {onClick}>Primary</Button>
-		<Button disabled size="sm" {onClick}>Disabled</Button>
-		<Button disabled size="sm" type="danger" {onClick}>Disabled Danger</Button>
-		<div class="break" />
-		<Button size="md" type="danger" {onClick}>Danger</Button>
-		<Button size="md" type="info" {onClick}>Info</Button>
-		<Button size="md" type="success" {onClick}>Sucess</Button>
-		<Button size="md" type="warning" {onClick}>Warning</Button>
-	</div>
-
-	<div class="group">
-		<h2>Switch</h2>
-		<div class="break" />
-		<Switch size="lg" bind:checked>{checked ? 'On' : 'Off'}</Switch>
-		<Switch size="md" bind:checked>{checked ? 'On' : 'Off'}</Switch>
-		<Switch size="sm" bind:checked>{checked ? 'On' : 'Off'}</Switch>
-	</div>
-
-	<div class="group">
-		<h2>Input Text - {value}</h2>
-		<div class="break" />
-		<Text placeholder="Placeholder" value="Value" disabled size="lg" />
-		<Text placeholder="Placeholder" value="Value" hide size="md" />
-		<Text placeholder="Placeholder" size="sm" bind:value />
+	<div class="groups">
+		<div class="group">
+			<h2>Button - {clicked}</h2>
+			<div class="break" />
+			<Button primary={false} size="lg" {onClick}>Secondary</Button>
+			<Button primary size="md" {onClick}>Primary</Button>
+			<Button disabled size="sm" {onClick}>Disabled</Button>
+			<Button disabled size="sm" type="danger" {onClick}>Disabled Danger</Button>
+			<div class="break" />
+			<Button size="md" type="danger" {onClick}>Danger</Button>
+			<Button size="md" type="info" {onClick}>Info</Button>
+			<Button size="md" type="success" {onClick}>Sucess</Button>
+			<Button size="md" type="warning" {onClick}>Warning</Button>
+		</div>
+		<div class="group">
+			<h2>Switch</h2>
+			<div class="break" />
+			<Switch size="lg" bind:checked>{checked ? 'On' : 'Off'}</Switch>
+			<Switch size="md" bind:checked>{checked ? 'On' : 'Off'}</Switch>
+			<Switch size="sm" bind:checked>{checked ? 'On' : 'Off'}</Switch>
+		</div>
+		<div class="group">
+			<h2>Numeric</h2>
+			<div class="break" />
+			<Numer size="lg" bind:value={numberValue} />
+			<Numer bind:value={numberValue} />
+			<Numer size="sm" disabled bind:value={numberValue} />
+		</div>
+		<div class="group">
+			<h2>Character - {value}</h2>
+			<div class="break" />
+			<Char size="lg" />
+			<Char />
+			<Char size="sm" />
+		</div>
+		<div class="group">
+			<h2>Input Text - {value}</h2>
+			<div class="break" />
+			<Text placeholder="Placeholder" value="Value" disabled size="lg" />
+			<Text placeholder="Placeholder" value="Value" hide size="md" />
+			<Text placeholder="Placeholder" size="sm" bind:value />
+		</div>
 	</div>
 
 	<div class="group">
@@ -181,7 +198,7 @@
 		margin-bottom: 1rem;
 		align-items: center;
 	}
-	.group:not(:last-child) {
+	.group {
 		border-bottom: 1px solid var(--border-color);
 	}
 	.break {
