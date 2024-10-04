@@ -37,6 +37,9 @@ jobs:
         working-directory: ./lib
         run: bun run build
 
-      - run: npm publish --access public
+      - name: Publishing to NPM
+        working-directory: ./lib
+        run: npm publish --access public
+        
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
