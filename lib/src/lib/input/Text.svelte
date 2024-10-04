@@ -7,11 +7,11 @@
 	export let size = 'md';
 	export let hide = false;
 
-	function onInput (e:  Event & { currentTarget: EventTarget & HTMLInputElement }) {
-    if(!e || !e.target) return;
-    //@ts-ignore
+	function onInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
+		if (!e || !e.target) return;
+		//@ts-ignore
 		value = e.target.value;
-	};
+	}
 </script>
 
 <input
@@ -50,5 +50,11 @@
 		background-color: transparent;
 		color: var(--text-color);
 		opacity: 0.5;
+	}
+
+	input:active,
+	input:focus {
+		border-color: var(--primary-color);
+		outline: none;
 	}
 </style>
