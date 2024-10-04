@@ -24,12 +24,16 @@
 
   --border-color: #e1e4e8;
 
+  --danger-dark: #d73a49;
   --danger: #d73a49;
   --danger-light: #d4515e;
+  --success-dark: #22863a;
   --success: #28a745;
   --success-light: #3fb950;
+  --warning-dark: #e29105;
   --warning: #ffd33d;
   --warning-light: #ffdf5d;
+  --info-dark: #0366d6;
   --info: #0366d6;
   --info-light: #1f7ee4;
 }

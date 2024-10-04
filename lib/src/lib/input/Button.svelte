@@ -47,18 +47,21 @@ on:click={disabled ? undefined : onClick}
 		transition: 0.2s;
 		color: var(--pure);
 	}
-	button:hover {
-		background-color: var(--button-bg-color);
-		color: var(--button-text-color);
+
+	button:hover:not(.disabled) {
+    border-color: var(--primary-color);
 	}
 
 	button.primary {
 		background-color: var(--button-bg-color);
 		color: var(--button-text-color);
+		border-color: var(--button-bg-color);
 	}
 
 	button.primary:hover:not(.disabled) {
-		background-color: var(--button-bg-color-hover);
+		border-color: var(--primary-color);
+		background-color: var(--bg-color);
+		color: var(--pure);
 	}
 	button.disabled {
 		cursor: not-allowed;
@@ -72,35 +75,35 @@ on:click={disabled ? undefined : onClick}
 	}
 
 	.typed:hover:not(.disabled) {
-		color: var(--border-color);
+		color: var(--bg-color);
 	}
 
 	.danger {
 		background-color: var(--danger);
 	}
 	.danger:hover:not(.disabled) {
-		background-color: var(--danger-light);
+		background-color: var(--danger-dark);
 	}
 
 	.warning {
 		background-color: var(--warning);
 	}
 	.warning:hover:not(.disabled) {
-		background-color: var(--warning-light);
+		background-color: var(--warning-dark);
 	}
 
 	.info {
 		background-color: var(--info);
 	}
 	.info:hover:not(.disabled) {
-		background-color: var(--info-light);
+		background-color: var(--info-dark);
 	}
 
 	.success {
 		background-color: var(--success);
 	}
 	.success:hover:not(.disabled) {
-		background-color: var(--success-light);
+		background-color: var(--success-dark);
 	}
 
 </style>
