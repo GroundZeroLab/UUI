@@ -16,6 +16,8 @@
 	let checked = true;
 	let value = '';
 	let numberValue = 0;
+	let charValue = 'A';
+
 	let clicked = false;
 	let selectMode = false;
 	let progress = 0;
@@ -71,11 +73,11 @@
 			<Numer size="sm" disabled bind:value={numberValue} />
 		</div>
 		<div class="group">
-			<h2>Character - {value}</h2>
+			<h2>Character - {charValue}</h2>
 			<div class="break" />
-			<Char size="lg" />
-			<Char />
-			<Char size="sm" />
+			<Char size="lg" bind:value={charValue}/>
+			<Char/>
+			<Char size="sm" max="Z" value={charValue}/>
 		</div>
 		<div class="group">
 			<h2>Input Text - {value}</h2>

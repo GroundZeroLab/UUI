@@ -5,7 +5,10 @@
 	export let value: string | null = 'A';
 	export let min: string = 'A';
 	export let max: string = 'ZZZ';
-	export let internalValue = 0;
+
+	let internalValue = 0;
+	let minInternal = charToNumber(min);
+	let maxInternal = charToNumber(max);
 
 	export let disabled: boolean = false;
 	export let size: Size = 'md';
@@ -13,8 +16,16 @@
 	function numberToChar(n: number) {
 		let result = '';
 		while (n >= 0) {
-			result = String.fromCharCode(n % 26 + 65) + result;
+			result = String.fromCharCode((n % 26) + 65) + result;
 			n = Math.floor(n / 26) - 1;
+		}
+		return result;
+	}
+
+	function charToNumber(c: string) {
+		let result = 0;
+		for (let i = 0; i < c.length; i++) {
+			result = result * 26 + c.charCodeAt(i) - 65;
 		}
 		return result;
 	}
@@ -28,6 +39,10 @@
 
 	function check(value: string | null) {
 		if (disabled || value === null) return null;
+		if (internalValue <= minInternal) internalValue = minInternal;
+		if (internalValue >= maxInternal) internalValue = maxInternal;
+		const nValue= numberToChar(internalValue);
+		if(nValue !== value) return nValue;
 		return value.toUpperCase();
 	}
 
@@ -49,7 +64,7 @@
 		height: 0.8rem;
 		font-size: 14px;
 		font-size: var(--font-size-sm);
-		padding: 0.1rem 0rem 0.1rem 0.15rem;
+		padding: 0.1rem 0.1rem 0.2rem 0.3rem;
 	}
 	.md {
 		height: 1rem;
