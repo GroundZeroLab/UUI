@@ -36,7 +36,7 @@ Once installed, you can start using UUI components in your Svelte project. Hereâ
   import { Button } from '@uui/svelte/input/Button.svelte';
 </script>
 
-<Button on:click={() => alert('Button clicked!')}>
+<Button onClick={() => alert('Button clicked!')}>
   Click Me!
 </Button>
 ```
