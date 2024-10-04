@@ -2,7 +2,7 @@
 	import type { Size } from '$lib/index.js';
 
 	export let action: 'button' | 'submit' | 'reset' = 'button';
-	export let type: 'danger' | 'warning' | 'info' | 'success' | '' = '';
+	export let type: 'danger' | 'warning' | 'info' | 'success' | 'icon' | '' = '';
 	export let primary: boolean = false;
 	export let disabled: boolean = false;
 
@@ -10,8 +10,13 @@
 	export let onClick: () => void = () => {};
 </script>
 
-<button type={action} class:typed={type} class:primary class:disabled class="{size} {type}"
-on:click={disabled ? undefined : onClick}
+<button
+	type={action}
+	class:typed={type}
+	class:primary
+	class:disabled
+	class="{size} {type}"
+	on:click={disabled ? undefined : onClick}
 >
 	<slot />
 </button>
@@ -49,7 +54,7 @@ on:click={disabled ? undefined : onClick}
 	}
 
 	button:hover:not(.disabled) {
-    border-color: var(--primary-color);
+		border-color: var(--primary-color);
 	}
 
 	button.primary {
@@ -70,7 +75,7 @@ on:click={disabled ? undefined : onClick}
 		opacity: 0.6;
 	}
 
-	.typed{
+	.typed {
 		color: var(--bg-color);
 	}
 
@@ -106,4 +111,26 @@ on:click={disabled ? undefined : onClick}
 		background-color: var(--success-dark);
 	}
 
+	.icon {
+		color: var(--pure);
+		background-color: transparent;
+		padding: 0;
+		border: none;
+	}
+	.icon:hover:not(.disabled) {
+		color: var(--primary-color);
+		fill: var(--primary-color);
+	}
+
+	.icon.sm {
+		font-size: 0.6rem;
+	}
+
+	.icon.md {
+		font-size: 0.7rem;
+	}
+
+	.icon.lg {
+		font-size: 0.75rem;
+	}
 </style>
