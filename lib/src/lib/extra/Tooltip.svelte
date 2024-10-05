@@ -33,7 +33,7 @@
 		background-color: var(--border-color);
 		color: var(--background-color);
 		padding: 0.5rem;
-		border-radius: 0.5rem;
+		border-radius: var(--border-radius);
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 		opacity: 0;
 		pointer-events: none;

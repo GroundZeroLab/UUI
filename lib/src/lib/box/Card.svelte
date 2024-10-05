@@ -38,7 +38,7 @@
 	.box {
 		max-width: 95vw;
 		border: 1px solid var(--border-color);
-		border-radius: 4px;
+		border-radius: var(--border-radius);
 		margin: 0.2rem 0;
 		display: flex;
 		flex-direction: column;

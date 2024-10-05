@@ -1,12 +1,14 @@
 <script lang="ts">
 	import type { Size } from '$lib/index.js';
 
+	export let name: string = '';
+
 	export let checked = false; // The initial state of the switch
 	export let size: Size = 'md';
 </script>
 
 <label class={size}>
-	<input type="checkbox" bind:checked />
+	<input type="checkbox" bind:checked {name}/>
 	<span class="switch">
 		<span class="circle" />
 	</span>

@@ -47,7 +47,7 @@
 		font-size: var(--font-size-md);
 		height: fit-content;
 		padding: 0.4rem 0.8rem;
-		border-radius: 0.5rem;
+		border-radius: var(--border-radius);
 		cursor: pointer;
 		transition: 0.2s;
 		color: var(--pure);

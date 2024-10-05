@@ -12,7 +12,7 @@
 		background-color: var(--border-color);
 		height: 0.5rem;
 		width: 100%;
-		border-radius: 1rem;
+		border-radius: var(--border-radius);
 		transition: 0.3s;
 	}
 

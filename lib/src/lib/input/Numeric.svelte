@@ -2,6 +2,8 @@
 	import type { Size } from '$lib/index.js';
 	import Button from './Button.svelte';
 
+	export let name: string = '';
+
 	export let value: number | null = 0;
 	export let min: number = 0;
 	export let max: number = 100;
@@ -28,7 +30,7 @@
 </script>
 
 <div class="input">
-	<input type="number" bind:value class={size} {disabled} style="--width:{width}" />
+	<input type="number" bind:value class={size} {disabled} style="--width:{width}" {name} />
 	<div class="arrows">
 		<Button onClick={() => onChange(true)} {disabled} {size} type="icon">&#9650;</Button>
 		<Button onClick={() => onChange(false)} {disabled} {size} type="icon">&#9660;</Button>
@@ -82,7 +84,7 @@
 		display: flex;
 		align-items: center;
 		border: 1px solid var(--border-color);
-		border-radius: 0.2rem;
+		border-radius: var(--border-radius);
 		height: fit-content;
 		gap: 0.1rem;
 	}
