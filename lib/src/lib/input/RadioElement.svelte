@@ -16,7 +16,7 @@
 	};
 </script>
 
-<label for={id} class={size} class:disabled style="--radio-size:{sizeMapping[size]}">
+<label for={id} class={size} class:disabled style="--radio-size:{sizeMapping[size || "md"]}">
 	<input type="radio" name={group} {id} bind:value {disabled} {checked} />
 	<span />
 	<slot />
