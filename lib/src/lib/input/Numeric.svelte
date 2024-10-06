@@ -24,9 +24,17 @@
 		return value;
 	}
 
+	const OFFSET = {
+		sm: 0.48,
+		md: 0.55,
+		lg: 0.67
+	};
+
+	const currentOffset = OFFSET[size || 'md'];
+
 	$: value = check(value);
 
-	$: width = max.toString().length * 0.68 + 'rem';
+	$: width = max.toString().length * currentOffset + 'rem';
 </script>
 
 <div class="input">
@@ -99,6 +107,7 @@
 	}
 
 	.arrows {
+		margin: 0 1px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
