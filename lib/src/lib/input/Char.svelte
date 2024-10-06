@@ -43,8 +43,8 @@
 		if (disabled || value === null) return null;
 		if (internalValue <= minInternal) internalValue = minInternal;
 		if (internalValue >= maxInternal) internalValue = maxInternal;
-		const nValue= numberToChar(internalValue);
-		if(nValue !== value) return nValue;
+		const nValue = numberToChar(internalValue);
+		if (nValue !== value) return nValue;
 		return value.toUpperCase();
 	}
 
@@ -53,7 +53,7 @@
 </script>
 
 <div class="input">
-	<input type="text" bind:value class={size} {disabled} style="--width:{width}" {name}/>
+	<input type="text" bind:value class={size} {disabled} style="--width:{width}" {name} />
 	<div class="arrows">
 		<Button onClick={() => onChange(true)} {disabled} {size} type="icon">&#9650;</Button>
 		<Button onClick={() => onChange(false)} {disabled} {size} type="icon">&#9660;</Button>
@@ -107,7 +107,7 @@
 		display: flex;
 		align-items: center;
 		border: 1px solid var(--border-color);
-		border-radius: 0.2rem;
+		border-radius: var(--border-radius);
 		height: fit-content;
 		gap: 0.1rem;
 	}

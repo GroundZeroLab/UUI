@@ -49,7 +49,6 @@
 	}
 
 	li {
-		border-radius: var(--border-radius);
 		transition: 0.3s;
 		padding: 0.5rem 0;
 		display: flex;

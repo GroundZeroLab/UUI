@@ -96,7 +96,6 @@ input[type='number'],
 input[type='tel'],
 input[type='url'] {
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
   padding: 8px;
   background-color: var(--bg-color);
   color: var(--text-color);
