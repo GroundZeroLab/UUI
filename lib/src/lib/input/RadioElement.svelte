@@ -9,10 +9,6 @@
 	export let disabled = false;
 	export let id = group + Math.round(Math.random() * 1000);
 
-	$: {
-		console.log('RadioElement', { size, value, group, checked, disabled, id });
-	}
-
 	let sizeMapping = {
 		sm: '0.4rem',
 		md: '0.7rem',
