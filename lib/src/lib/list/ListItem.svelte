@@ -14,7 +14,7 @@
 <li class={size}>
 	<div class="title">
 		{#if checkbox}
-			<CheckBox bind:checked></CheckBox>
+			<CheckBox bind:checked size="lg"></CheckBox>
 		{/if}
 		<h3>
 			<slot name="title" />
