@@ -58,8 +58,8 @@
 
     /* --primary-color: #58a6ff; */
     --primary-color: rgb(31, 111, 235);
-
-    --secondary-color: #161b22;
+    --secondary-color: #58a6ff;
+    /* --secondary-color: #161b22; */
 
     --border-color: #30363d;
 

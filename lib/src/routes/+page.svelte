@@ -12,6 +12,7 @@
 	import Tooltip from '$lib/extra/Tooltip.svelte';
 	import Numer from '$lib/input/Numeric.svelte';
 	import Char from '$lib/input/Char.svelte';
+	import RadioElement from '$lib/input/RadioElement.svelte';
 
 	let checked = true;
 	let value = '';
@@ -75,9 +76,16 @@
 		<div class="group">
 			<h2>Character - {charValue}</h2>
 			<div class="break" />
-			<Char size="lg" bind:value={charValue}/>
-			<Char/>
-			<Char size="sm" max="Z" value={charValue}/>
+			<Char size="lg" bind:value={charValue} />
+			<Char />
+			<Char size="sm" max="Z" value={charValue} />
+		</div>
+		<div class="group">
+			<h2>RadioButton</h2>
+			<div class="break" />
+			<RadioElement size="lg" group="group1" value="1">Radio 1</RadioElement>
+			<RadioElement size="md" group="group1" value="2">Radio 2</RadioElement>
+			<RadioElement size="sm" group="group1" value="3" disabled>Radio 3</RadioElement>
 		</div>
 		<div class="group">
 			<h2>Input Text - {value}</h2>
