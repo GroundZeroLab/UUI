@@ -13,6 +13,7 @@
 	import Numer from '$lib/input/Numeric.svelte';
 	import Char from '$lib/input/Char.svelte';
 	import RadioElement from '$lib/input/RadioElement.svelte';
+	import LongText from '$lib/input/LongText.svelte';
 
 	let checked = true;
 	let value = '';
@@ -93,6 +94,13 @@
 			<Text placeholder="Placeholder" value="Value" disabled size="lg" />
 			<Text placeholder="Placeholder" value="Value" hide size="md" />
 			<Text placeholder="Placeholder" size="sm" bind:value />
+		</div>
+		<div class="group">
+			<h2>Long text - {value}</h2>
+			<div class="break" />
+			<LongText placeholder="Placeholder" size="lg" bind:value />
+			<LongText placeholder="Placeholder" bind:value />
+			<LongText placeholder="Placeholder" size="sm" bind:value />
 		</div>
 	</div>
 
