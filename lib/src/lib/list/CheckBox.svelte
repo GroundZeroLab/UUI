@@ -1,16 +1,9 @@
 <script lang="ts">
 	import type { Size } from '$lib/index.js';
 
-	export let size: Size = "md";
-	export let group = '';
+	export let size: Size = 'md';
 	export let checked = false;
 	export let disabled = false;
-
-	let sizeMapping = {
-		sm: '0.4rem',
-		md: '0.7rem',
-		lg: '1rem'
-	};
 </script>
 
 <label
@@ -18,7 +11,6 @@
 	class:disabled
 	on:click|stopPropagation={() => (checked = !checked)}
 	class={size}
-	style="--radio-size:{sizeMapping[size]}"
 >
 	<span />
 	<slot />
@@ -27,12 +19,15 @@
 <style>
 	.sm {
 		font-size: var(--font-size-sm);
+		--radio-size: 0.4rem;
 	}
 	.md {
 		font-size: var(--font-size-md);
+		--radio-size: 0.7rem;
 	}
 	.lg {
 		font-size: var(--font-size-lg);
+		--radio-size: 1rem;
 	}
 
 	label.checked > span {
