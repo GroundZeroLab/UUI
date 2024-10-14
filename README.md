@@ -1,5 +1,8 @@
 # UUI
 
+[![Publish to NPM](https://github.com/GroundZeroLab/UUI/actions/workflows/publish.yml/badge.svg)](https://github.com/GroundZeroLab/UUI/actions/workflows/publish.yml)
+[![npm version](https://badge.fury.io/js/@gzlab%2Fuui.svg)](https://badge.fury.io/js/@gzlab%2Fuui)
+
 ## Description
 
 **UUI** (Unified User Interface) is a Svelte library designed to simplify and accelerate the creation of user interfaces. With UUI, you can easily build consistent, reusable UI components that seamlessly integrate into your Svelte projects. Whether you're building complex web apps or small projects, UUI offers a robust foundation to get started quickly.
