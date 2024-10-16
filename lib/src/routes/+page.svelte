@@ -7,9 +7,9 @@
 	import ListItem from '$lib/list/ListItem.svelte';
 	import List from '$lib/list/List.svelte';
 	import Accordion from '$lib/box/Accordion.svelte';
-	import Loading from '$lib/gauche/Loading.svelte';
-	import ProgressBar from '$lib/gauche/ProgressBar.svelte';
-	import Tooltip from '$lib/extra/Tooltip.svelte';
+	import Loading from '$lib/gauge/Loading.svelte';
+	import ProgressBar from '$lib/gauge/ProgressBar.svelte';
+	import Tooltip from '$lib/extra/ToolTip.svelte';
 	import Numer from '$lib/input/Numeric.svelte';
 	import Char from '$lib/input/Char.svelte';
 	import RadioElement from '$lib/input/RadioElement.svelte';
