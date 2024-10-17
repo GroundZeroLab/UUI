@@ -150,7 +150,7 @@
 	<div class="group">
 		<h2>Card</h2>
 		<div class="break" />
-		<Card size="sm" aspect="">
+		<Card size="sm" aspect="" status="danger">
 			<svelte:fragment slot="header">Header</svelte:fragment>
 			<svelte:fragment>
 				<span
@@ -161,7 +161,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="footer">Footer</svelte:fragment>
 		</Card>
-		<Card size="sm">
+		<Card size="sm" status="success">
 			<svelte:fragment slot="header">Header</svelte:fragment>
 			<svelte:fragment>
 				<span
@@ -171,6 +171,13 @@
 				>
 			</svelte:fragment>
 			<svelte:fragment slot="footer">Footer</svelte:fragment>
+		</Card>
+		<Card size="lg" status="warning">
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Card>
 		<Card size="lg">
 			<span
