@@ -58,7 +58,6 @@
 		aspect-ratio: 1/1;
 		border-radius: 50%;
 		border: 1px solid var(--border-color);
-		background-color: var(--pure);
 	}
 
 	label.disabled {
