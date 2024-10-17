@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Card from '$lib/box/Card.svelte';
-	import type { Size } from '$lib/index.js';
+	import type { Size, Status } from '$lib/index.js';
 
 	export let open = false;
 	export let size: Size = 'sm';
+	export let status: Status = undefined
 
 	function toggle() {
 		open = !open;
@@ -12,7 +13,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<Card {size}>
+<Card {size} {status}>
 	<div class="title" on:click|stopPropagation={toggle}>
 		<span class="chevron" class:open></span>
 		<span><slot name="title" /></span>

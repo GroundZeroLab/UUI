@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Size } from '$lib/index.js';
+	import type { Size, Status } from '$lib/index.js';
 	import Button from './Button.svelte';
 
 	export let name: string = '';
@@ -10,6 +10,7 @@
 	export let step: number = 1;
 	export let disabled: boolean = false;
 	export let size: Size = 'md';
+	export let status: Status = undefined
 
 	function onChange(d: boolean) {
 		if (disabled || value === null) return null;
@@ -37,7 +38,9 @@
 	$: width = max.toString().length * currentOffset + 'rem';
 </script>
 
-<div class="input">
+<div class="input"
+style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}"
+>
 	<input type="number" bind:value class={size} {disabled} style="--width:{width}" {name} />
 	<div class="arrows">
 		<Button onClick={() => onChange(true)} {disabled} {size} type="icon">&#9650;</Button>
@@ -91,7 +94,7 @@
 		overflow: hidden;
 		display: flex;
 		align-items: center;
-		border: 1px solid var(--border-color);
+		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
 		height: fit-content;
 		gap: 0.1rem;

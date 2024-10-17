@@ -70,16 +70,19 @@
 		<div class="group">
 			<h2>Numeric</h2>
 			<div class="break" />
-			<Numer size="lg" bind:value={numberValue} />
-			<Numer bind:value={numberValue} />
-			<Numer size="sm" disabled bind:value={numberValue} />
+			<Numer size="lg" bind:value={numberValue} status="danger"/>
+			<Numer bind:value={numberValue} status="success"/>
+			<Numer bind:value={numberValue}/>
+			<Numer size="sm" disabled bind:value={numberValue} status="warning"/>
 		</div>
 		<div class="group">
 			<h2>Character - {charValue}</h2>
 			<div class="break" />
-			<Char size="lg" bind:value={charValue} />
-			<Char />
-			<Char size="sm" max="Z" value={charValue} />
+			<Char size="lg" bind:value={charValue} status="danger"/>
+			<Char status="success"/>
+			<Char/>
+			<Char size="sm" max="Z" value={charValue} status="warning" />
+
 		</div>
 		<div class="group">
 			<h2>RadioButton</h2>
@@ -91,15 +94,17 @@
 		<div class="group">
 			<h2>Input Text - {value}</h2>
 			<div class="break" />
-			<Text placeholder="Placeholder" value="Value" disabled size="lg" />
-			<Text placeholder="Placeholder" value="Value" hide size="md" />
+			<Text placeholder="Placeholder" value="Value" disabled size="lg" status="danger" />
+			<Text placeholder="Placeholder" bind:value size="md" status="success" />
+			<Text placeholder="Placeholder" size="sm" bind:value status="warning" />
 			<Text placeholder="Placeholder" size="sm" bind:value />
 		</div>
 		<div class="group">
 			<h2>Long text - {value}</h2>
 			<div class="break" />
-			<LongText placeholder="Placeholder" size="lg" bind:value />
-			<LongText placeholder="Placeholder" bind:value />
+			<LongText placeholder="Placeholder" size="lg" bind:value status="danger" />
+			<LongText placeholder="Placeholder" bind:value status="success" />
+			<LongText placeholder="Placeholder" size="sm" bind:value status="warning" />
 			<LongText placeholder="Placeholder" size="sm" bind:value />
 		</div>
 	</div>
@@ -107,7 +112,37 @@
 	<div class="group">
 		<h2>Accordion</h2>
 		<div class="break" />
-		<Accordion>
+		<Accordion status="danger" size="lg">
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Accordion>
+		<Accordion status="success" size="md">
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Accordion>
+		<Accordion status="warning" size="sm">
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Accordion>
+		<Accordion size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
 			<svelte:fragment slot="content">
 				<span
@@ -145,7 +180,7 @@
 	<div class="group">
 		<h2>Card</h2>
 		<div class="break" />
-		<Card size="sm" aspect="">
+		<Card size="sm" aspect="" status="danger">
 			<svelte:fragment slot="header">Header</svelte:fragment>
 			<svelte:fragment>
 				<span
@@ -156,7 +191,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="footer">Footer</svelte:fragment>
 		</Card>
-		<Card size="sm">
+		<Card size="sm" status="success">
 			<svelte:fragment slot="header">Header</svelte:fragment>
 			<svelte:fragment>
 				<span
@@ -166,6 +201,13 @@
 				>
 			</svelte:fragment>
 			<svelte:fragment slot="footer">Footer</svelte:fragment>
+		</Card>
+		<Card size="lg" status="warning">
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Card>
 		<Card size="lg">
 			<span
@@ -214,7 +256,7 @@
 		flex-wrap: wrap;
 		padding-bottom: 1.5em;
 		margin-bottom: 1rem;
-		align-items: center;
+		align-items: start;
 	}
 	.group {
 		border-bottom: 1px solid var(--border-color);

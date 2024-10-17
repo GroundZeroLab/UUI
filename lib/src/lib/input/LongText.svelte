@@ -1,12 +1,15 @@
 <script lang="ts">
+	import type { Status } from '$lib/index.js';
+
 	export let id = '';
 	export let name = '';
 	export let value = '';
 	export let placeholder = '';
 	export let disabled = false;
 	export let size = 'md';
-  export let cols= 20;
-  export let rows= 3;
+	export let cols = 20;
+	export let rows = 3;
+	export let status: Status = undefined;
 
 	function onInput(e: Event & { currentTarget: EventTarget & HTMLTextAreaElement }) {
 		if (!e || !e.target) return;
@@ -15,18 +18,19 @@
 	}
 </script>
 
-<textarea
-
-	{name}
-	{id}
-	{placeholder}
-	{disabled}
-  {rows}
-  {cols} 
-  {value}
-	class={size}
-	on:input={onInput}
-/>
+<div class="border" style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}">
+	<textarea
+		{name}
+		{id}
+		{placeholder}
+		{disabled}
+		{rows}
+		{cols}
+		{value}
+		class={size}
+		on:input={onInput}
+	/>
+</div>
 
 <style>
 	.sm {
@@ -40,15 +44,31 @@
 	.lg {
 		zoom: 1.2;
 	}
-	textarea {
-		border: 1px solid var(--border-color);
+	.border{
+		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
-		padding: 8px;
-		background-color: var(--bg-color);
+	}
+	textarea {
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			Roboto,
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			'Open Sans',
+			'Helvetica Neue',
+			sans-serif;
+			margin: 2px 2px 1px 2px;
+		border: none;
+			background-color: var(--bg-color);
 		color: var(--text-color);
 		font-size: var(--font-size-md);
 		height: fit-content;
-    min-height: 0.8rem;
+		min-height: 1rem;
+		min-width: 5.2rem;
 	}
 	textarea:disabled {
 		cursor: not-allowed;
