@@ -65,7 +65,7 @@
 	}
 
 	.loadingText {
-		color: white;
+		color: var(--text-color);
 		margin-bottom: 2%;
 	}
 
