@@ -112,7 +112,37 @@
 	<div class="group">
 		<h2>Accordion</h2>
 		<div class="break" />
-		<Accordion>
+		<Accordion status="danger" size="lg">
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Accordion>
+		<Accordion status="success" size="md">
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Accordion>
+		<Accordion status="warning" size="sm">
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Accordion>
+		<Accordion size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
 			<svelte:fragment slot="content">
 				<span
@@ -226,7 +256,7 @@
 		flex-wrap: wrap;
 		padding-bottom: 1.5em;
 		margin-bottom: 1rem;
-		align-items: center;
+		align-items: start;
 	}
 	.group {
 		border-bottom: 1px solid var(--border-color);
