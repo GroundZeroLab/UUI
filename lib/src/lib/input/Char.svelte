@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type { Size } from '$lib/index.js';
+	import type { Size, Status } from '$lib/index.js';
 	import Button from './Button.svelte';
 
 	export let name: string = '';
+	export let status: Status = undefined
 
 	export let value: string | null = 'A';
 	export let min: string = 'A';
@@ -51,8 +52,8 @@
 	$: value = check(value);
 	$: width = max.toString().length * 0.75 + 'rem';
 </script>
-
-<div class="input">
+	
+	<div class="input" style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}">
 	<input type="text" bind:value class={size} {disabled} style="--width:{width}" {name} />
 	<div class="arrows">
 		<Button onClick={() => onChange(true)} {disabled} {size} type="icon">&#9650;</Button>
@@ -106,7 +107,7 @@
 		overflow: hidden;
 		display: flex;
 		align-items: center;
-		border: 1px solid var(--border-color);
+		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
 		height: fit-content;
 		gap: 0.1rem;

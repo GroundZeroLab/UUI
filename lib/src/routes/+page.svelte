@@ -70,16 +70,19 @@
 		<div class="group">
 			<h2>Numeric</h2>
 			<div class="break" />
-			<Numer size="lg" bind:value={numberValue} />
-			<Numer bind:value={numberValue} />
-			<Numer size="sm" disabled bind:value={numberValue} />
+			<Numer size="lg" bind:value={numberValue} status="danger"/>
+			<Numer bind:value={numberValue} status="success"/>
+			<Numer bind:value={numberValue}/>
+			<Numer size="sm" disabled bind:value={numberValue} status="warning"/>
 		</div>
 		<div class="group">
 			<h2>Character - {charValue}</h2>
 			<div class="break" />
-			<Char size="lg" bind:value={charValue} />
-			<Char />
-			<Char size="sm" max="Z" value={charValue} />
+			<Char size="lg" bind:value={charValue} status="danger"/>
+			<Char status="success"/>
+			<Char/>
+			<Char size="sm" max="Z" value={charValue} status="warning" />
+
 		</div>
 		<div class="group">
 			<h2>RadioButton</h2>
