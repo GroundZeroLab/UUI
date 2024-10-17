@@ -91,15 +91,17 @@
 		<div class="group">
 			<h2>Input Text - {value}</h2>
 			<div class="break" />
-			<Text placeholder="Placeholder" value="Value" disabled size="lg" />
-			<Text placeholder="Placeholder" value="Value" hide size="md" />
+			<Text placeholder="Placeholder" value="Value" disabled size="lg" status="danger" />
+			<Text placeholder="Placeholder" bind:value size="md" status="success" />
+			<Text placeholder="Placeholder" size="sm" bind:value status="warning" />
 			<Text placeholder="Placeholder" size="sm" bind:value />
 		</div>
 		<div class="group">
 			<h2>Long text - {value}</h2>
 			<div class="break" />
-			<LongText placeholder="Placeholder" size="lg" bind:value />
-			<LongText placeholder="Placeholder" bind:value />
+			<LongText placeholder="Placeholder" size="lg" bind:value status="danger" />
+			<LongText placeholder="Placeholder" bind:value status="success" />
+			<LongText placeholder="Placeholder" size="sm" bind:value status="warning" />
 			<LongText placeholder="Placeholder" size="sm" bind:value />
 		</div>
 	</div>

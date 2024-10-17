@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { Status } from "$lib/index.js";
+
 	export let id = '';
 	export let name = '';
 	export let value = '';
@@ -6,6 +8,7 @@
 	export let disabled = false;
 	export let size = 'md';
 	export let hide = false;
+	export let status: Status = undefined
 
 	function onInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
 		if (!e || !e.target) return;
@@ -20,7 +23,8 @@
 	{id}
 	{placeholder}
 	{disabled}
-	class={size}
+	class={`${size}`}
+	style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}"
 	on:input={onInput}
 />
 
@@ -36,8 +40,9 @@
 	.lg {
 		zoom: 1.2;
 	}
+
 	input {
-		border: 1px solid var(--border-color);
+		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
 		padding: 8px;
 		background-color: var(--bg-color);
