@@ -25,16 +25,16 @@
   --border-color: #e1e4e8;
   --border-radius: 0.4rem;
 
-  --danger-dark: #d73a49;
-  --danger: #d73a49;
+  --danger-dark: #cf0f22;
+  --danger: #ff172e;
   --danger-light: #d4515e;
-  --success-dark: #22863a;
-  --success: #28a745;
+  --success-dark: #2db14c;
+  --success: #68ca6b;
   --success-light: #3fb950;
-  --warning-dark: #e29105;
-  --warning: #ffd33d;
+  --warning-dark: #e4aa19;
+  --warning: #f9c92b;
   --warning-light: #ffdf5d;
-  --info-dark: #0366d6;
+  --info-dark: #082fbd;
   --info: #0366d6;
   --info-light: #1f7ee4;
 }

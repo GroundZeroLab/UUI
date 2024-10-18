@@ -7,4 +7,4 @@ export * from "./list/index.js";
 
 
 export type Size = "sm" | "md" | "lg" | undefined;
-export type Status = "success" | "danger" | "warning" | undefined;
+export type Status = "success" | "danger" | "warning" | "info" | undefined;

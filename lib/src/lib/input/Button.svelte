@@ -77,10 +77,12 @@
 
 	.typed {
 		color: var(--bg-color);
+		border-color: transparent
 	}
 
 	.typed:hover:not(.disabled) {
 		color: var(--bg-color);
+		border-color: transparent;
 	}
 
 	.danger {
