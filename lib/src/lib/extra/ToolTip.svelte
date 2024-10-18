@@ -11,8 +11,8 @@
 		display: inline-block;
 		background-color: var(--border-color);
 		border-radius: 50%;
-		width: 1rem;
-		height: 1rem;
+		width: 1.1rem;
+		height: 1.1rem;
     margin-left: 0.1rem;
 	}
 
