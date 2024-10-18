@@ -9,6 +9,7 @@
 	export let aspect: string | undefined = undefined;
 	export let state: boolean = true;
 	export let animate: boolean = true;
+	export let closeButton = true;
 </script>
 
 {#if state}
@@ -20,9 +21,11 @@
 						<span class="left">
 							<slot name="title" />
 						</span>
+					{#if closeButton}
 						<span class="right">
-							<Button onClick={() => (state = false)} type="danger">X</Button>
+							<Button size="sm" type="danger" onClick={() => state = false}>X</Button>
 						</span>
+					{/if}
 					</div>
 				</svelte:fragment>
 
