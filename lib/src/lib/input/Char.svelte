@@ -110,6 +110,7 @@
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
 		height: fit-content;
+		width: fit-content;
 		gap: 0.1rem;
 	}
 
