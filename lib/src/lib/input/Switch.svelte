@@ -65,7 +65,7 @@
 	}
 
 	input[type='checkbox']:checked + .switch {
-		background-color: #68ca6b; /* green when "on" */
+		background-color: var(--success); /* green when "on" */
 	}
 
 	input[type='checkbox']:checked + .switch .circle {

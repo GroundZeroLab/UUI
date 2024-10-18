@@ -40,7 +40,6 @@ style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}; {style
 		max-width: 95vw;
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
-		margin: 0.2rem 0;
 		display: flex;
 		flex-direction: column;
 		aspect-ratio: var(--arw) / var(--arh);

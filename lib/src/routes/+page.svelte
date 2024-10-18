@@ -14,6 +14,7 @@
 	import Char from '$lib/input/Char.svelte';
 	import RadioElement from '$lib/input/RadioElement.svelte';
 	import LongText from '$lib/input/LongText.svelte';
+	import Modal from '$lib/box/Modal.svelte';
 
 	let checked = true;
 	let value = '';
@@ -26,6 +27,8 @@
 	let progressDirection = 5;
 
 	let inter: undefined | number;
+
+	let modalOpen = false;
 
 	$: {
 		clearInterval(inter);
@@ -70,19 +73,18 @@
 		<div class="group">
 			<h2>Numeric</h2>
 			<div class="break" />
-			<Numer size="lg" bind:value={numberValue} status="danger"/>
-			<Numer bind:value={numberValue} status="success"/>
-			<Numer bind:value={numberValue}/>
-			<Numer size="sm" disabled bind:value={numberValue} status="warning"/>
+			<Numer size="lg" bind:value={numberValue} status="danger" />
+			<Numer bind:value={numberValue} status="success" />
+			<Numer bind:value={numberValue} />
+			<Numer size="sm" disabled bind:value={numberValue} status="warning" />
 		</div>
 		<div class="group">
 			<h2>Character - {charValue}</h2>
 			<div class="break" />
-			<Char size="lg" bind:value={charValue} status="danger"/>
-			<Char status="success"/>
-			<Char/>
+			<Char size="lg" bind:value={charValue} status="danger" />
+			<Char status="success" />
+			<Char />
 			<Char size="sm" max="Z" value={charValue} status="warning" />
-
 		</div>
 		<div class="group">
 			<h2>RadioButton</h2>
@@ -240,6 +242,23 @@
 			sit amet consectetur adipisicing elit. Doloribus minus est a facilis alias laborum
 		</span>
 	</div>
+
+	<div class="group">
+		<h2 class="v-align">
+			Modal - <Button size="md" onClick={() => (modalOpen = !modalOpen)}>Open</Button>
+		</h2>
+		<div class="break" />
+		<Modal bind:state={modalOpen}>
+			<svelte:fragment slot="title">Title</svelte:fragment>
+			<svelte:fragment slot="content">
+				<span
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+					consectetur deleniti nesciunt architecto minus omnis.
+				</span>
+			</svelte:fragment>
+		</Modal>
+	</div>
 </div>
 
 <style>
@@ -269,5 +288,10 @@
 		padding-bottom: 0.5rem;
 		font-size: 1.4rem;
 		color: var(--pure);
+	}
+
+	.v-align {
+		display: flex;
+		gap: 0.5rem;
 	}
 </style>
