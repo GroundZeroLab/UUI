@@ -71,6 +71,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: var(--font-size-md);
+  margin: 0;
 }
 
 .container {
@@ -123,4 +124,9 @@ input[type='tel']:focus,
 input[type='url']:focus {
   border-color: var(--primary-color);
   outline: none;
+}
+
+.break {
+  flex-basis: 100%;
+  width: 0;
 }
