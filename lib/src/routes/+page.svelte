@@ -17,7 +17,7 @@
 	import Modal from '$lib/box/Modal.svelte';
 	import TopNav from '$lib/nav/TopNav.svelte';
 	import DropDown from '$lib/nav/DropDown.svelte';
-	import NavLink from '$lib/nav/NavLink.svelte';
+	import DropDownLink from '$lib/nav/DropDownLink.svelte';
 
 	let checked = true;
 	let value = '';
@@ -55,18 +55,35 @@
 	<DropDown>
 		<div slot="header">DropDown</div>
 		<div slot="body" class="grid">
-			<NavLink href="#">
+			<DropDownLink href="#">
 				📥 Import
-				<div slot="description">Import test in Tao from Excel file</div>
-			</NavLink>
-			<NavLink href="#">
+				<div slot="description">Import assessment in TAO</div>
+			</DropDownLink>
+			<DropDownLink href="#">
+				📤 Export
+				<div slot="description">Export assessment to PDF</div>
+			</DropDownLink>
+			<DropDownLink href="#">
+				⚒️ Forge
+				<div slot="description">Create assessment item</div>
+			</DropDownLink>
+		</div>
+	</DropDown>
+	<DropDown>
+		<div slot="header">DropDown</div>
+		<div slot="body" class="grid">
+			<DropDownLink href="#">
 				📥 Import
-				<div slot="description">Import test in Tao from Excel file</div>
-			</NavLink>
-			<NavLink href="#">
-				📥 Import
-				<div slot="description">Import test in Tao from Excel file</div>
-			</NavLink>
+				<div slot="description">Import assessment in TAO</div>
+			</DropDownLink>
+			<DropDownLink href="#">
+				📤 Export
+				<div slot="description">Export assessment to PDF</div>
+			</DropDownLink>
+			<DropDownLink href="#">
+				⚒️ Forge
+				<div slot="description">Create assessment item</div>
+			</DropDownLink>
 		</div>
 	</DropDown>
 </TopNav>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	export let show = true; // show the body by default
+	export let show = false;
 	let isMobile = false;
 
 	onMount(() => {
@@ -28,10 +28,9 @@
 		>
 	</header>
 	{#if show}
-	<div class="spacer"></div>
-			<div class="body">
-				<slot name="body" />
-			</div>
+		<div class="body">
+			<slot name="body" />
+		</div>
 	{/if}
 </button>
 
@@ -44,24 +43,25 @@
 		text-align: inherit;
 		position: relative;
 		padding: 0;
+
 	}
 	button svg.hovered {
 		rotate: 180deg;
 	}
 	header {
 		display: flex;
-		align-items: center;
-		gap: 2px;
+		align-items: end;
+		gap: 0.2rem;
 		cursor: pointer;
+		font-size: var(--font-size-md);
+		margin-bottom: 0.3rem;
+		font-weight: bold;
 	}
 	svg {
 		height: 14px;
 		aspect-ratio: 1/1;
 		display: block;
 		transition: 0.2s;
-	}
-	.spacer {
-		height: 0.15rem;
 	}
 	.body {
 		margin-left: -0.3rem;

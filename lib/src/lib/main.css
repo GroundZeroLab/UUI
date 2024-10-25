@@ -71,6 +71,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: var(--font-size-md);
+  margin: 0;
 }
 
 .container {
