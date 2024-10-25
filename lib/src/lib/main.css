@@ -124,3 +124,8 @@ input[type='url']:focus {
   border-color: var(--primary-color);
   outline: none;
 }
+
+.break {
+  flex-basis: 100%;
+  width: 0;
+}

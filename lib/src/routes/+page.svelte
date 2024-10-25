@@ -15,6 +15,9 @@
 	import RadioElement from '$lib/input/RadioElement.svelte';
 	import LongText from '$lib/input/LongText.svelte';
 	import Modal from '$lib/box/Modal.svelte';
+	import TopNav from '$lib/nav/TopNav.svelte';
+	import DropDown from '$lib/nav/DropDown.svelte';
+	import NavLink from '$lib/nav/NavLink.svelte';
 
 	let checked = true;
 	let value = '';
@@ -47,6 +50,26 @@
 		}, 300);
 	}
 </script>
+
+<TopNav>
+	<DropDown>
+		<div slot="header">DropDown</div>
+		<div slot="body" class="grid">
+			<NavLink href="#">
+				📥 Import
+				<div slot="description">Import test in Tao from Excel file</div>
+			</NavLink>
+			<NavLink href="#">
+				📥 Import
+				<div slot="description">Import test in Tao from Excel file</div>
+			</NavLink>
+			<NavLink href="#">
+				📥 Import
+				<div slot="description">Import test in Tao from Excel file</div>
+			</NavLink>
+		</div>
+	</DropDown>
+</TopNav>
 
 <div class="groups">
 	<div class="groups">
@@ -293,5 +316,10 @@
 	.v-align {
 		display: flex;
 		gap: 0.5rem;
+	}
+
+	.grid{
+		display: grid;
+    grid-template-columns: repeat(2, 1fr);
 	}
 </style>
