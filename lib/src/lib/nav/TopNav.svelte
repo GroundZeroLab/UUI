@@ -10,7 +10,7 @@
 		padding: 10px 10px 8px 10px;
 		margin: 0.3rem 0;
 		width: calc(100vw - 20px);
-		background-color: black;
+		background-color: var(--bg-color-hover);
 	}
 
 	nav > :global(h1) {

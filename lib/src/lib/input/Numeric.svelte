@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Size, Status } from '$lib/index.js';
-	import Button from './Button.svelte';
+	import UpDown from './UpDown.svelte';
 
 	export let name: string = '';
 
@@ -10,13 +10,7 @@
 	export let step: number = 1;
 	export let disabled: boolean = false;
 	export let size: Size = 'md';
-	export let status: Status = undefined
-
-	function onChange(d: boolean) {
-		if (disabled || value === null) return null;
-		if (d) value = value + step;
-		else value = value - step;
-	}
+	export let status: Status = undefined;
 
 	function check(value: number | null) {
 		if (disabled || value === null) return null;
@@ -25,95 +19,15 @@
 		return value;
 	}
 
-	const OFFSET = {
-		sm: 0.48,
-		md: 0.55,
-		lg: 0.67
-	};
-
-	const currentOffset = OFFSET[size || 'md'];
-
 	$: value = check(value);
 
-	$: width = max.toString().length * currentOffset + 'rem';
+	const onChange = (d: boolean) => {
+		if (disabled || value === null) return null;
+		if (d) value = value + step;
+		else value = value - step;
+	};
 </script>
 
-<div class="input"
-style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}"
->
-	<input type="number" bind:value class={size} {disabled} style="--width:{width}" {name} />
-	<div class="arrows">
-		<Button onClick={() => onChange(true)} {disabled} {size} type="icon">&#9650;</Button>
-		<Button onClick={() => onChange(false)} {disabled} {size} type="icon">&#9660;</Button>
-	</div>
-	<div class:disabled />
-</div>
-
-<style>
-	.sm {
-		height: 0.8rem;
-		font-size: 14px;
-		font-size: var(--font-size-sm);
-		padding: 0.1rem 0rem 0.1rem 0.15rem;
-	}
-	.md {
-		height: 1rem;
-		font-size: var(--font-size-md);
-		padding: 0.1rem 0rem 0.1rem 0.2rem;
-	}
-	.lg {
-		height: 1.2rem;
-		font-size: var(--font-size-lg);
-		padding: 0.15rem 0rem 0.2rem 0.4rem;
-	}
-
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button,
-	input[type='number'] {
-		-webkit-appearance: none;
-		-moz-appearance: textfield;
-		margin: 0;
-	}
-
-	input {
-		width: var(--width);
-		border: none;
-		border-right: 1px solid var(--border-color);
-		background-color: var(--bg-color);
-		color: var(--text-color);
-	}
-
-	input:active,
-	input:focus {
-		border-color: var(--primary-color);
-		outline: none;
-	}
-
-	.input {
-		position: relative;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		border: 1px solid var(--bd-color);
-		border-radius: var(--border-radius);
-		height: fit-content;
-		width: fit-content;
-		gap: 0.1rem;
-	}
-
-	.disabled {
-		top: 0;
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		z-index: 1;
-		cursor: not-allowed;
-	}
-
-	.arrows {
-		margin: 0 1px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-</style>
+<UpDown {disabled} {size} {status} {onChange} maxLength={max.toString().length}>
+	<input type="number" bind:value {disabled} {name} />
+</UpDown>
