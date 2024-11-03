@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { Size, Status } from '$lib/index.js';
 
-	export let size: Size = 'sm';
+	export let size: Size = undefined;
 	export let aspect: string = '';
 	export let status: Status = undefined
 	$: ar = aspect.split('/');
 	$: style = aspect.length > 0 ? `--arw:${ar[0]}; --arh:${ar[1]}` : 'auto';
 </script>
 
-<div class="box {size}" 
+<div class="box {size ? size : ''}" 
 style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}; {style}">
 	{#if $$slots.header}
 		<header>
@@ -26,6 +26,17 @@ style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}; {style
 </div>
 
 <style>
+	.box {
+		max-width: 95vw;
+		width: fit-content;
+		border: 1px solid var(--bd-color);
+		border-radius: var(--border-radius);
+		display: flex;
+		flex-direction: column;
+		aspect-ratio: var(--arw) / var(--arh);
+		font-size: var(--font-size-md);
+	}
+
 	.sm {
 		width: 300px;
 	}
@@ -34,16 +45,6 @@ style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}; {style
 	}
 	.lg {
 		width: 700px;
-	}
-
-	.box {
-		max-width: 95vw;
-		border: 1px solid var(--bd-color);
-		border-radius: var(--border-radius);
-		display: flex;
-		flex-direction: column;
-		aspect-ratio: var(--arw) / var(--arh);
-		font-size: var(--font-size-md);
 	}
 
 	header {

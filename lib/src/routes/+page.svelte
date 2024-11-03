@@ -205,7 +205,7 @@
 		<div class="break" />
 		<List bind:checkbox={selectMode} let:checkbox let:parentChecked>
 			<ListItem size="sm" {checkbox} {parentChecked}>
-				<svelte:fragment slot="title">First</svelte:fragment>
+				First
 				<svelte:fragment slot="at">18:40</svelte:fragment>
 				<svelte:fragment slot="subtitle">Subtitle</svelte:fragment>
 				<svelte:fragment slot="content"
@@ -213,9 +213,7 @@
 					facilis, ipsum porro, consequatur.</svelte:fragment
 				>
 			</ListItem>
-			<ListItem size="sm" {checkbox} {parentChecked}>
-				<svelte:fragment slot="title">Second</svelte:fragment>
-			</ListItem>
+			<ListItem size="sm" {checkbox} {parentChecked}>Second</ListItem>
 		</List>
 	</div>
 
@@ -335,8 +333,8 @@
 		gap: 0.5rem;
 	}
 
-	.grid{
+	.grid {
 		display: grid;
-    grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 </style>

@@ -13,10 +13,9 @@
 
 <style>
 	a {
-		padding: 10px 12px 12px 12px;
+		padding: 0.4rem 0.6rem;
 		border-radius: 8px;
-		min-width: max-content;
-		height: max-content;
+		display: inline-block;
 		transition: 0.2s;
 		text-decoration: none;
 		color: inherit;
@@ -26,7 +25,7 @@
 	}
 	p {
 		font-size: 14px;
-    color: var(--txt-secondary);
-    margin: 0.3rem 0 0 0;
+		color: var(--txt-secondary);
+		margin: 0.3rem 0 0 0;
 	}
 </style>

@@ -33,23 +33,6 @@
 </div>
 
 <style>
-	.sm :global(input) {
-		height: 0.8rem;
-		font-size: 14px;
-		font-size: var(--font-size-sm);
-		padding: 0.1rem 0rem 0.1rem 0.15rem;
-	}
-	.md :global(input) {
-		height: 1rem;
-		font-size: var(--font-size-md);
-		padding: 0.1rem 0rem 0.1rem 0.2rem;
-	}
-	.lg :global(input) {
-		height: 1.2rem;
-		font-size: var(--font-size-lg);
-		padding: 0.15rem 0rem 0.2rem 0.4rem;
-	}
-
 	.input :global(input::-webkit-outer-spin-button),
 	.input :global(input::-webkit-inner-spin-button),
 	.input :global(input) {
@@ -65,6 +48,23 @@
 		background-color: var(--bg-color);
 		color: var(--text-color);
     padding: 0 0.2rem;
+	}
+
+	.sm :global(input) {
+		height: 0.8rem;
+		font-size: 14px;
+		font-size: var(--font-size-sm);
+		padding: 0.1rem 0rem 0.1rem 0.15rem;
+	}
+	.md :global(input) {
+		height: 1rem;
+		font-size: var(--font-size-md);
+		padding: 0.1rem 0rem 0.1rem 0.2rem;
+	}
+	.lg :global(input) {
+		height: 1.2rem;
+		font-size: var(--font-size-lg);
+		padding: 0.15rem 0rem 0.2rem 0.4rem;
 	}
 
 	.input :global(input:active),

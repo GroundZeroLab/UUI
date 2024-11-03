@@ -17,7 +17,7 @@
 			<CheckBox bind:checked size="lg"></CheckBox>
 		{/if}
 		<h3>
-			<slot name="title" />
+			<slot />
 		</h3>
 		<span>
 			<slot name="at" />
