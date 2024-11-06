@@ -280,13 +280,11 @@
 		<div class="break" />
 		<Modal bind:state={modalOpen}>
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Modal>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Size, Status } from '$lib/index.js';
 
-	export let size: Size = undefined;
+	export let size: Size = "";
 	export let aspect: string = '';
 	export let status: Status = undefined;
 	$: ar = aspect.split('/');
