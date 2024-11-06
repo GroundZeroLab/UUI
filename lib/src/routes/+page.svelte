@@ -156,43 +156,35 @@
 		<div class="break" />
 		<Accordion status="danger" size="lg">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 		<Accordion status="success" size="md">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 		<Accordion status="warning" size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 		<Accordion size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 	</div>
 

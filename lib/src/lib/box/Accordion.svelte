@@ -4,7 +4,7 @@
 
 	export let open = false;
 	export let size: Size = 'sm';
-	export let status: Status = undefined
+	export let status: Status = undefined;
 
 	function toggle() {
 		open = !open;
@@ -14,26 +14,24 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <Card {size} {status}>
-	<div class="title" on:click|stopPropagation={toggle}>
+	<div class="title" on:click|stopPropagation={toggle} slot="header" class:open>
 		<span class="chevron" class:open></span>
 		<span><slot name="title" /></span>
 	</div>
-	<svelte:fragment slot="footer">
-		{#if open}
-			<div class="content">
-				<slot name="content" />
-			</div>
+	{#if open}
+		{#if $$slots.default}
+			<slot />
 		{/if}
-	</svelte:fragment>
+		{#if $$slots.footer}
+			<slot name="footer" />
+		{/if}
+	{/if}
 </Card>
 
 <style>
 	.title {
-		overflow: hidden;
 		cursor: pointer;
-		font-weight: bold;
 	}
-
 	.chevron {
 		display: inline-block;
 		position: relative;
@@ -46,9 +44,5 @@
 
 	.chevron.open {
 		transform: rotate(180deg);
-	}
-
-	.content {
-		overflow: hidden;
 	}
 </style>
