@@ -1,1 +1,1 @@
-export {default as ToolTip} from "./ToolTip.svelte";
+export { default as ToolTip } from "./ToolTip.svelte";
