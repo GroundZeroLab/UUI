@@ -25,6 +25,7 @@
 	{disabled}
 	class={`${size}`}
 	style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}"
+	value={value}
 	on:input={onInput}
 />
 
