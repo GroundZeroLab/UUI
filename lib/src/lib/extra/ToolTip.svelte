@@ -31,7 +31,7 @@
 		top: 1.5rem;
 		right: -200%;
 		background-color: var(--border-color);
-		color: var(--background-color);
+		color: var(--text-color);
 		padding: 0.5rem;
 		border-radius: var(--border-radius);
 		box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);

@@ -34,10 +34,6 @@
 		zoom: 0.8;
 	}
 
-	.md {
-		zoom: 1;
-	}
-
 	.lg {
 		zoom: 1.2;
 	}
@@ -45,11 +41,9 @@
 	input {
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
-		padding: 8px;
-		background-color: var(--bg-color);
+		padding: 5px;
 		color: var(--text-color);
 		font-size: var(--font-size-md);
-		height: fit-content;
 	}
 	input:disabled {
 		cursor: not-allowed;

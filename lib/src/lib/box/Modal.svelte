@@ -29,8 +29,8 @@
 					</div>
 				</svelte:fragment>
 
-				<slot name="content" />
-				<slot name="footer" />
+				<slot/>
+				<slot name="footer" slot="footer"/>
 			</Card>
 		</div>
 	</div>
@@ -52,7 +52,6 @@
 	.modal {
 		width: fit-content;
 		height: fit-content;
-		max-width: 500px;
 		background-color: var(--bg-color);
 		border-radius: var(--border-radius);
 	}

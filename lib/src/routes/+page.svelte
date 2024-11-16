@@ -156,43 +156,35 @@
 		<div class="break" />
 		<Accordion status="danger" size="lg">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 		<Accordion status="success" size="md">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 		<Accordion status="warning" size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 		<Accordion size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Accordion>
 	</div>
 
@@ -205,7 +197,7 @@
 		<div class="break" />
 		<List bind:checkbox={selectMode} let:checkbox let:parentChecked>
 			<ListItem size="sm" {checkbox} {parentChecked}>
-				<svelte:fragment slot="title">First</svelte:fragment>
+				First
 				<svelte:fragment slot="at">18:40</svelte:fragment>
 				<svelte:fragment slot="subtitle">Subtitle</svelte:fragment>
 				<svelte:fragment slot="content"
@@ -213,9 +205,7 @@
 					facilis, ipsum porro, consequatur.</svelte:fragment
 				>
 			</ListItem>
-			<ListItem size="sm" {checkbox} {parentChecked}>
-				<svelte:fragment slot="title">Second</svelte:fragment>
-			</ListItem>
+			<ListItem size="sm" {checkbox} {parentChecked}>Second</ListItem>
 		</List>
 	</div>
 
@@ -290,13 +280,11 @@
 		<div class="break" />
 		<Modal bind:state={modalOpen}>
 			<svelte:fragment slot="title">Title</svelte:fragment>
-			<svelte:fragment slot="content">
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
 					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
 					consectetur deleniti nesciunt architecto minus omnis.
 				</span>
-			</svelte:fragment>
 		</Modal>
 	</div>
 </div>
@@ -335,8 +323,8 @@
 		gap: 0.5rem;
 	}
 
-	.grid{
+	.grid {
 		display: grid;
-    grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 </style>
