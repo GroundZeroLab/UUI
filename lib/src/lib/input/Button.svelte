@@ -35,7 +35,7 @@
 	}
 
 	:global(:root) {
-		--button-bg-color: rgb(31, 111, 235);
+		--button-bg-color: var(--primary-color);
 		--button-bg-color-hover: rgb(22, 94, 255);
 		--button-text-color: #ffffff;
 	}
