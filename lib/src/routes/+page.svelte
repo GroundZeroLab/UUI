@@ -15,9 +15,6 @@
 	import RadioElement from '$lib/input/RadioElement.svelte';
 	import LongText from '$lib/input/LongText.svelte';
 	import Modal from '$lib/box/Modal.svelte';
-	import TopNav from '$lib/nav/TopNav.svelte';
-	import DropDown from '$lib/nav/DropDown.svelte';
-	import DropDownLink from '$lib/nav/DropDownLink.svelte';
 
 	let checked = true;
 	let value = '';
@@ -50,43 +47,6 @@
 		}, 300);
 	}
 </script>
-
-<TopNav>
-	<DropDown>
-		<div slot="header">DropDown</div>
-		<div slot="body" class="grid">
-			<DropDownLink href="#">
-				📥 Import
-				<div slot="description">Import assessment in TAO</div>
-			</DropDownLink>
-			<DropDownLink href="#">
-				📤 Export
-				<div slot="description">Export assessment to PDF</div>
-			</DropDownLink>
-			<DropDownLink href="#">
-				⚒️ Forge
-				<div slot="description">Create assessment item</div>
-			</DropDownLink>
-		</div>
-	</DropDown>
-	<DropDown>
-		<div slot="header">DropDown</div>
-		<div slot="body" class="grid">
-			<DropDownLink href="#">
-				📥 Import
-				<div slot="description">Import assessment in TAO</div>
-			</DropDownLink>
-			<DropDownLink href="#">
-				📤 Export
-				<div slot="description">Export assessment to PDF</div>
-			</DropDownLink>
-			<DropDownLink href="#">
-				⚒️ Forge
-				<div slot="description">Create assessment item</div>
-			</DropDownLink>
-		</div>
-	</DropDown>
-</TopNav>
 
 <div class="groups">
 	<div class="groups">
@@ -321,10 +281,5 @@
 	.v-align {
 		display: flex;
 		gap: 0.5rem;
-	}
-
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 	}
 </style>
