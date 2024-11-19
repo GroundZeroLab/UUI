@@ -1,8 +1,9 @@
 <script lang="ts">
 	export let href = '';
+	export let active = false;
 </script>
 
-<a {href}>
+<a {href} class:active>
 	<slot />
 	{#if $$slots.description}
 		<p>
@@ -21,6 +22,9 @@
 		color: inherit;
 	}
 	a:hover {
+		background-color: rgba(126, 126, 126, 0.15);
+	}
+	a.active {
 		background-color: rgba(126, 126, 126, 0.15);
 	}
 	p {
