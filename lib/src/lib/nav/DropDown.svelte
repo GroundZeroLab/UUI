@@ -43,7 +43,6 @@
 		text-align: inherit;
 		position: relative;
 		padding: 0;
-
 	}
 	button svg.hovered {
 		rotate: 180deg;

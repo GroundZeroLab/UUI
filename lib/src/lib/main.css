@@ -1,84 +1,94 @@
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Open Sans',
+		'Helvetica Neue',
+		sans-serif;
 
-  --font-size-sm: 0.75rem;
-  --font-size-md: 0.88rem;
-  --font-size-lg: 1rem;
+	--font-size-sm: 0.75rem;
+	--font-size-md: 0.88rem;
+	--font-size-lg: 1rem;
 
-  /* Light theme colors */
-  --bg-color: #ffffff;
-  --bg-color-hover: #f6f8fa;
-  --bg-color-active: #f3f4f6;
-  --bg-color-disabled: #f3f4f6;
+	/* Light theme colors */
+	--bg-color: #ffffff;
+	--bg-color-hover: #f6f8fa;
+	--bg-color-active: #f3f4f6;
+	--bg-color-disabled: #f3f4f6;
 
-  --pure: black;
+	--pure: black;
 
-  --focus-color: #004ca3;
+	--focus-color: #004ca3;
 
-  --text-color: #24292e;
-  --text-color-light: #586069;
-  --text-color-lighter: #6a737d;
+	--text-color: #24292e;
+	--text-color-light: #586069;
+	--text-color-lighter: #6a737d;
 
-  --primary-color: rgb(31, 111, 235);
-  --secondary-color: #337ed3;
+	--primary-color: rgb(31, 111, 235);
+	--secondary-color: #337ed3;
 
-  --border-color: #e1e4e8;
-  --border-radius: 0.4rem;
+	--border-color: #e1e4e8;
+	--border-radius: 0.4rem;
 
-  --danger-dark: #cf0f22;
-  --danger: #ff172e;
-  --danger-light: #d4515e;
-  --success-dark: #2db14c;
-  --success: #68ca6b;
-  --success-light: #3fb950;
-  --warning-dark: #e4aa19;
-  --warning: #f9c92b;
-  --warning-light: #ffdf5d;
-  --info-dark: #082fbd;
-  --info: #0366d6;
-  --info-light: #1f7ee4;
+	--danger-dark: #cf0f22;
+	--danger: #ff172e;
+	--danger-light: #d4515e;
+	--success-dark: #2db14c;
+	--success: #68ca6b;
+	--success-light: #3fb950;
+	--warning-dark: #e4aa19;
+	--warning: #f9c92b;
+	--warning-light: #ffdf5d;
+	--info-dark: #082fbd;
+	--info: #0366d6;
+	--info-light: #1f7ee4;
 }
 
-
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #0d1117;
-    --bg-color-hover: #161b22;
-    --bg-color-active: #161b22;
-    --bg-color-disabled: #161b22;
+	:root {
+		--bg-color: #0d1117;
+		--bg-color-hover: #161b22;
+		--bg-color-active: #161b22;
+		--bg-color-disabled: #161b22;
 
-    --pure: white;
+		--pure: white;
 
-    --button-bg-color: #58a6ff;
-    --button-text-color: #0d1117;
+		--button-bg-color: #58a6ff;
+		--button-text-color: #0d1117;
 
-    --text-color: #c9d1d9;
-    --text-color-light: #8b949e;
-    --text-color-lighter: #6e7681;
+		--text-color: #c9d1d9;
+		--text-color-light: #8b949e;
+		--text-color-lighter: #6e7681;
 
-    /* --primary-color: #58a6ff; */
-    --primary-color: rgb(31, 111, 235);
-    --secondary-color: #58a6ff;
-    /* --secondary-color: #161b22; */
+		/* --primary-color: #58a6ff; */
+		--primary-color: rgb(31, 111, 235);
+		--secondary-color: #58a6ff;
+		/* --secondary-color: #161b22; */
 
-    --border-color: #30363d;
+		--border-color: #30363d;
 
-    --focus-color: #58a6ff;
-  }
+		--focus-color: #58a6ff;
+	}
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-size: var(--font-size-md);
-  margin: 0;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-size: var(--font-size-md);
+	margin: 0;
 }
 
 .container {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--border-color);
-  padding: 20px;
-  border-radius: var(--border-radius);
+	background-color: var(--secondary-color);
+	border: 1px solid var(--border-color);
+	padding: 20px;
+	border-radius: var(--border-radius);
 }
 
 h1,
@@ -87,7 +97,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+	margin: 0;
 }
 
 input[type='text'],
@@ -96,12 +106,12 @@ input[type='password'],
 input[type='number'],
 input[type='tel'],
 input[type='url'] {
-  border: 1px solid var(--border-color);
-  padding: 8px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-size: var(--font-size-md);
-  height: fit-content;
+	border: 1px solid var(--border-color);
+	padding: 8px;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-size: var(--font-size-md);
+	height: fit-content;
 }
 
 input[type='text']:disabled,
@@ -110,10 +120,10 @@ input[type='password']:disabled,
 input[type='number']:disabled,
 input[type='tel']:disabled,
 input[type='url']:disabled {
-  cursor: not-allowed;
-  background-color: transparent;
-  color: var(--text-color);
-  opacity: 0.5;
+	cursor: not-allowed;
+	background-color: transparent;
+	color: var(--text-color);
+	opacity: 0.5;
 }
 
 input[type='text']:focus,
@@ -122,11 +132,11 @@ input[type='password']:focus,
 input[type='number']:focus,
 input[type='tel']:focus,
 input[type='url']:focus {
-  border-color: var(--primary-color);
-  outline: none;
+	border-color: var(--primary-color);
+	outline: none;
 }
 
 .break {
-  flex-basis: 100%;
-  width: 0;
+	flex-basis: 100%;
+	width: 0;
 }

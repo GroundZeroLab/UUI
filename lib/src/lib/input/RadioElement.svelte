@@ -16,7 +16,7 @@
 	};
 </script>
 
-<label for={id} class={size} class:disabled style="--radio-size:{sizeMapping[size || "md"]}">
+<label for={id} class={size} class:disabled style="--radio-size:{sizeMapping[size || 'md']}">
 	<input type="radio" name={group} {id} bind:value {disabled} {checked} />
 	<span />
 	<slot />
@@ -73,11 +73,10 @@
 	}
 
 	label:not(.disabled):hover span {
-    background-color: var(--primary-color);
-
+		background-color: var(--primary-color);
 	}
 
 	label > input:checked + span {
-    background-color: var(--primary-color);
+		background-color: var(--primary-color);
 	}
 </style>

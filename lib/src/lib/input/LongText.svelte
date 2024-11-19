@@ -13,8 +13,8 @@
 
 	function onInput(e: Event & { currentTarget: EventTarget & HTMLTextAreaElement }) {
 		if (!e || !e.target) return;
-		//@ts-ignore
-		value = e.target.value;
+		const target = e.target as HTMLTextAreaElement;
+		value = target.value;
 	}
 </script>
 
@@ -44,7 +44,7 @@
 	.lg {
 		zoom: 1.2;
 	}
-	.border{
+	.border {
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
 	}
@@ -61,9 +61,9 @@
 			'Open Sans',
 			'Helvetica Neue',
 			sans-serif;
-			margin: 2px 2px 1px 2px;
+		margin: 2px 2px 1px 2px;
 		border: none;
-			background-color: var(--bg-color);
+		background-color: var(--bg-color);
 		color: var(--text-color);
 		font-size: var(--font-size-md);
 		height: fit-content;

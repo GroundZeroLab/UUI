@@ -67,7 +67,7 @@
 		gap: 0.1rem;
 	}
 
-	.title h3 {
+	.title h4 {
 		color: var(--text-color);
 		margin: 0;
 		flex: 1;

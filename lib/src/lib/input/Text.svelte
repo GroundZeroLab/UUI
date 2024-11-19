@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Status } from "$lib/index.js";
+	import type { Status } from '$lib/index.js';
 
 	export let id = '';
 	export let name = '';
@@ -8,12 +8,12 @@
 	export let disabled = false;
 	export let size = 'md';
 	export let hide = false;
-	export let status: Status = undefined
+	export let status: Status = undefined;
 
 	function onInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
 		if (!e || !e.target) return;
-		//@ts-ignore
-		value = e.target.value;
+		const target = e.target as HTMLTextAreaElement;
+		value = target.value;
 	}
 </script>
 
@@ -25,7 +25,7 @@
 	{disabled}
 	{value}
 	class={`${size}`}
-	style="--bd-color:{status ?  `var(--${status})` : 'var(--border-color)'}"
+	style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}"
 	on:input={onInput}
 />
 

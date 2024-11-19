@@ -47,7 +47,7 @@
 		border-right: 1px solid var(--border-color);
 		background-color: var(--bg-color);
 		color: var(--text-color);
-    padding: 0 0.2rem;
+		padding: 0 0.2rem;
 	}
 
 	.sm :global(input) {
@@ -83,7 +83,7 @@
 		height: fit-content;
 		width: fit-content;
 		gap: 0.1rem;
-    padding: 0.05rem;
+		padding: 0.05rem;
 	}
 
 	.disabled {

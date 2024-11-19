@@ -1,20 +1,18 @@
 <script lang="ts">
 	import type { Size } from '$lib/index.js';
+	import Button from '$lib/input/Button.svelte';
 
 	export let size: Size = 'md';
 	export let checked = false;
 	export let disabled = false;
 </script>
 
-<label
-	class:checked
-	class:disabled
-	on:click|stopPropagation={() => (checked = !checked)}
-	class={size}
->
-	<span />
-	<slot />
-</label>
+<Button type="icon" onClick={() => (checked = !checked)}>
+	<label class:checked class:disabled class={size}>
+		<span />
+		<slot />
+	</label>
+</Button>
 
 <style>
 	.sm {

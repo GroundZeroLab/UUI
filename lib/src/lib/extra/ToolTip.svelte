@@ -13,7 +13,7 @@
 		border-radius: 50%;
 		width: 1.1rem;
 		height: 1.1rem;
-    margin-left: 0.1rem;
+		margin-left: 0.1rem;
 	}
 
 	.icon {
@@ -38,7 +38,7 @@
 		opacity: 0;
 		pointer-events: none;
 		transition: 0.2s;
-    width: 10rem;
+		width: 10rem;
 	}
 
 	.icon:hover + .tip {

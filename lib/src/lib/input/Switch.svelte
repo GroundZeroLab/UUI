@@ -8,7 +8,7 @@
 </script>
 
 <label class={size}>
-	<input type="checkbox" bind:checked {name}/>
+	<input type="checkbox" bind:checked {name} />
 	<span class="switch">
 		<span class="circle" />
 	</span>

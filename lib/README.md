@@ -33,12 +33,10 @@ Once installed, you can start using UUI components in your Svelte project. Hereâ
 
 ```svelte
 <script>
-  import { Button } from '@uui/svelte/input/Button.svelte';
+	import { Button } from '@uui/svelte/input/Button.svelte';
 </script>
 
-<Button onClick={() => alert('Button clicked!')}>
-  Click Me!
-</Button>
+<Button onClick={() => alert('Button clicked!')}>Click Me!</Button>
 ```
 
 This example demonstrates how easy it is to import and use a component from UUI. Customize it as needed to fit your design.

@@ -21,16 +21,16 @@
 						<span class="left">
 							<slot name="title" />
 						</span>
-					{#if closeButton}
-						<span class="right">
-							<Button size="sm" type="danger" onClick={() => state = false}>X</Button>
-						</span>
-					{/if}
+						{#if closeButton}
+							<span class="right">
+								<Button size="sm" type="danger" onClick={() => (state = false)}>X</Button>
+							</span>
+						{/if}
 					</div>
 				</svelte:fragment>
 
-				<slot/>
-				<slot name="footer" slot="footer"/>
+				<slot />
+				<slot name="footer" slot="footer" />
 			</Card>
 		</div>
 	</div>

@@ -38,10 +38,10 @@
 				<span slot="footer">Lorem, ipsum dolor sit amet </span>
 			</Card>
 		{/each}
-		{#each new Array(3) as _, i}
+		{#each new Array(3) as _}
 			<Accordion>
 				<span slot="title">Accordion Header</span>
-				<span slot="content">This is the accordion content.</span>
+				<span>This is the accordion content.</span>
 			</Accordion>
 		{/each}
 	</div>

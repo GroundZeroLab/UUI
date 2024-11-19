@@ -116,35 +116,35 @@
 		<div class="break" />
 		<Accordion status="danger" size="lg">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-				<span
-					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
-					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
-					consectetur deleniti nesciunt architecto minus omnis.
-				</span>
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Accordion>
 		<Accordion status="success" size="md">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-				<span
-					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
-					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
-					consectetur deleniti nesciunt architecto minus omnis.
-				</span>
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Accordion>
 		<Accordion status="warning" size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-				<span
-					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
-					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
-					consectetur deleniti nesciunt architecto minus omnis.
-				</span>
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Accordion>
 		<Accordion size="sm">
 			<svelte:fragment slot="title">Title</svelte:fragment>
-				<span
-					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
-					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
-					consectetur deleniti nesciunt architecto minus omnis.
-				</span>
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Accordion>
 	</div>
 
@@ -240,11 +240,11 @@
 		<div class="break" />
 		<Modal bind:state={modalOpen}>
 			<svelte:fragment slot="title">Title</svelte:fragment>
-				<span
-					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
-					fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
-					consectetur deleniti nesciunt architecto minus omnis.
-				</span>
+			<span
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
+				fugiat provident tempora deleniti eligendi ducimus fugit, minus ullam? Tempora dolor illo
+				consectetur deleniti nesciunt architecto minus omnis.
+			</span>
 		</Modal>
 	</div>
 </div>

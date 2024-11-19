@@ -22,9 +22,9 @@
 		{#if $$slots.default}
 			<slot />
 		{/if}
-		{#if $$slots.footer}
-			<slot name="footer" />
-		{/if}
+		<!-- {#if $$slots.footer}
+				<slot name="footer" slot="footer"/>
+		{/if} -->
 	{/if}
 </Card>
 

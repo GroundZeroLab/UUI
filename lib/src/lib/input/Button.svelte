@@ -77,7 +77,7 @@
 
 	.typed {
 		color: var(--bg-color);
-		border-color: transparent
+		border-color: transparent;
 	}
 
 	.typed:hover:not(.disabled) {
