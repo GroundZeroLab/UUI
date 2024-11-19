@@ -13,11 +13,7 @@
 	import Numeric from '$lib/input/Numeric.svelte';
 	import Char from '$lib/input/Char.svelte';
 	import RadioElement from '$lib/input/RadioElement.svelte';
-	import LongText from '$lib/input/LongText.svelte';
 	import Modal from '$lib/box/Modal.svelte';
-	import TopNav from '$lib/nav/TopNav.svelte';
-	import DropDown from '$lib/nav/DropDown.svelte';
-	import DropDownLink from '$lib/nav/DropDownLink.svelte';
 
 	let showModal = false;
 	let toggle = false;
