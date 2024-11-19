@@ -24,22 +24,6 @@
 	let progress = 50;
 </script>
 
-<TopNav>
-	<DropDown>
-		<div slot="header">Menu</div>
-		<div slot="body" class="flex">
-			<DropDownLink href="/demo">
-				<span> 🏡 Home </span>
-				<span slot="description">The home page. Duh 🙄 </span>
-			</DropDownLink>
-			<DropDownLink href="/demo">
-				<span> 📖 About </span>
-				<span slot="description">The about page.</span>
-			</DropDownLink>
-		</div>
-	</DropDown>
-</TopNav>
-
 <Modal bind:state={showModal} closeButton={false}>
 	<h2 slot="title">Modal Title</h2>
 	<span>This is a modal content.</span>
