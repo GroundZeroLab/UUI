@@ -20,6 +20,7 @@
 		transition: 0.2s;
 		text-decoration: none;
 		color: inherit;
+		font-weight: bold;
 	}
 	a:hover {
 		background-color: rgba(126, 126, 126, 0.15);
