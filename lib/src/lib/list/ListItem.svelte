@@ -16,9 +16,9 @@
 		{#if checkbox}
 			<CheckBox bind:checked size="lg"></CheckBox>
 		{/if}
-		<h3>
+		<h4>
 			<slot />
-		</h3>
+		</h4>
 		<span>
 			<slot name="at" />
 		</span>
@@ -32,6 +32,9 @@
 		<div class="content">
 			<slot name="content" />
 		</div>
+	{/if}
+	{#if $$slots.child}
+		<slot name="child" />
 	{/if}
 </li>
 
