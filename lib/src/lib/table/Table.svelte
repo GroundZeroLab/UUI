@@ -19,7 +19,7 @@
 		color: var(--pure);
 		font-weight: bold;
 		padding: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
 	}
 
 	table :global(td) {
@@ -29,7 +29,6 @@
 
 	table :global(tr:nth-child(even)) {
 		background-color: var(--bg-color-active);
-
 	}
 
 	table :global(tr:last-child td) {
