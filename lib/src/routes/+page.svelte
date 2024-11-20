@@ -15,6 +15,7 @@
 	import RadioElement from '$lib/input/RadioElement.svelte';
 	import LongText from '$lib/input/LongText.svelte';
 	import Modal from '$lib/box/Modal.svelte';
+	import Table from '$lib/table/Table.svelte';
 
 	let checked = true;
 	let value = '';
@@ -246,6 +247,36 @@
 				consectetur deleniti nesciunt architecto minus omnis.
 			</span>
 		</Modal>
+	</div>
+	<div class="group">
+		<h2>Table</h2>
+		<div class="break" />
+		<Table>
+			<thead>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+					<th>Header 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Row 1</td>
+					<td>Row 1</td>
+					<td>Row 1</td>
+				</tr>
+				<tr>
+					<td>Row 2</td>
+					<td>Row 2</td>
+					<td>Row 2</td>
+				</tr>
+				<tr>
+					<td>Row 3</td>
+					<td>Row 3</td>
+					<td>Row 3</td>
+				</tr>
+			</tbody>
+		</Table>
 	</div>
 </div>
 
