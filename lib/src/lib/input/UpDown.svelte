@@ -37,7 +37,8 @@
 	.input :global(input::-webkit-inner-spin-button),
 	.input :global(input) {
 		-webkit-appearance: none;
-		-moz-appearance: textfield;
+		-moz-appearance: none;
+		appearance: none;
 		margin: 0;
 	}
 

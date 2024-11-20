@@ -8,7 +8,7 @@
 <ul>
 	{#if checkbox}
 		<ListItem size="sm" {checkbox} bind:checked>
-			<svelte:fragment slot="title">{checked ? 'Unselect all' : 'Select all'}</svelte:fragment>
+			<svelte:fragment>{checked ? 'Unselect all' : 'Select all'}</svelte:fragment>
 		</ListItem>
 	{/if}
 	<slot {checkbox} parentChecked={checked} />
