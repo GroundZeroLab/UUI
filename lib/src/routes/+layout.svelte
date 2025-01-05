@@ -39,7 +39,7 @@
 </TopNav>
 
 <main>
-	<SideNav>
+	<!-- <SideNav>
 		<List>
 			<ListItem>
 				<DropDownLink href="#input">
@@ -70,7 +70,7 @@
 				</List>
 			</ListItem>
 		</List>
-	</SideNav>
+	</SideNav> -->
 	<slot />
 </main>
 
@@ -79,6 +79,7 @@
 		height: 100%;
 		width: 100%;
 		display: flex;
+		margin-top: 1rem;
 	}
 	.grid {
 		display: grid;

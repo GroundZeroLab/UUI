@@ -5,11 +5,12 @@
 
 	export let checked = false; // The initial state of the switch
 	export let size: Size = 'md';
+	export let green: boolean = false;
 </script>
 
 <label class={size}>
 	<input type="checkbox" bind:checked {name} />
-	<span class="switch">
+	<span class="switch" class:green>
 		<span class="circle" />
 	</span>
 	<slot />
@@ -64,8 +65,12 @@
 		display: none;
 	}
 
-	input[type='checkbox']:checked + .switch {
+	input[type='checkbox']:checked + .switch.green {
 		background-color: var(--success); /* green when "on" */
+	}
+
+	input[type='checkbox']:checked + .switch {
+		background-color: var(--primary-color); /* green when "on" */
 	}
 
 	input[type='checkbox']:checked + .switch .circle {

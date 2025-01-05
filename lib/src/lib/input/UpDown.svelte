@@ -11,7 +11,7 @@
 
 	const OFFSET = {
 		sm: 0.6,
-		md: 0.75,
+		md: 0.73,
 		lg: 0.8
 	};
 
@@ -55,17 +55,17 @@
 		height: 0.8rem;
 		font-size: 14px;
 		font-size: var(--font-size-sm);
-		padding: 0.1rem 0rem 0.1rem 0.15rem;
+		padding: 0.1rem 0.1rem 0.1rem 0.15rem;
 	}
 	.md :global(input) {
 		height: 1rem;
 		font-size: var(--font-size-md);
-		padding: 0.1rem 0rem 0.1rem 0.2rem;
+		padding: 0.1rem 0.1rem 0.1rem 0.2rem;
 	}
 	.lg :global(input) {
 		height: 1.2rem;
 		font-size: var(--font-size-lg);
-		padding: 0.15rem 0rem 0.2rem 0.4rem;
+		padding: 0.15rem 0.1rem 0.2rem 0.4rem;
 	}
 
 	.input :global(input:active),
@@ -81,8 +81,6 @@
 		align-items: center;
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
-		height: fit-content;
-		width: fit-content;
 		gap: 0.1rem;
 		padding: 0.05rem;
 	}
@@ -97,10 +95,10 @@
 	}
 
 	.arrows {
+		max-height: 1.8rem;
 		margin: 0 1px;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
 		-webkit-user-select: none; /* Safari */
 		-ms-user-select: none; /* IE 10 and IE 11 */
 		user-select: none; /* Standard syntax */
