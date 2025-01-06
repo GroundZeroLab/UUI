@@ -23,7 +23,6 @@
 
 <style>
 	.sm {
-		height: 0.8rem;
 		font-size: var(--font-size-sm);
 	}
 
