@@ -58,6 +58,7 @@
 			<h2>Button - {clicked}</h2>
 			<div class="break" />
 			<Button primary={false} size="lg" {onClick}>Secondary</Button>
+			<Button primary={false} size="lg" active {onClick}>Secondary</Button>
 			<Button primary size="md" {onClick}>Primary</Button>
 			<Button disabled size="sm" {onClick}>Disabled</Button>
 			<Button disabled size="sm" type="danger" {onClick}>Disabled Danger</Button>

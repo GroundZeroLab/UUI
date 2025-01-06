@@ -5,6 +5,7 @@
 	export let type: 'danger' | 'warning' | 'info' | 'success' | 'icon' | '' = '';
 	export let primary: boolean = false;
 	export let disabled: boolean = false;
+	export let active: boolean = false;
 
 	export let size: Size = 'md';
 	export let onClick: () => void = () => {};
@@ -15,6 +16,7 @@
 	class:typed={type}
 	class:primary
 	class:disabled
+	class:active
 	class="{size} {type}"
 	on:click={disabled ? undefined : onClick}
 >
@@ -55,6 +57,14 @@
 
 	button:hover:not(.disabled) {
 		border-color: var(--primary-color);
+	}
+
+	button.active:not(.disabled) {
+		border-color: var(--primary-color);
+	}
+
+	button.active:hover:not(.disabled) {
+		border: 1px solid var(--border-color);
 	}
 
 	button.primary {
