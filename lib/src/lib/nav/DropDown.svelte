@@ -4,6 +4,7 @@
 	export let disabled = false;
 	export let show = false;
 	export let clickRequired = false;
+	export let border = false;
 	let isMobile = false;
 
 	onMount(() => {
@@ -18,7 +19,7 @@
 	on:mouseenter={() => (show = disabled ? false : clickRequired || isMobile ? show : true)}
 	on:mouseleave={() => (show = disabled ? false : clickRequired ? show : false)}
 >
-	<header class:disabled>
+	<header class:disabled class:border>
 		<slot name="header" />
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class:hovered={show}
 			><path
@@ -57,13 +58,18 @@
 		gap: 0.2rem;
 		cursor: pointer;
 		font-size: var(--font-size-md);
-		margin-bottom: 0.3rem;
 		font-weight: bold;
 	}
 
 	.disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
+	}
+
+	.border {
+		border: 1px solid var(--border-color);
+		border-radius: var(--border-radius);
+		padding: 0.3rem;
 	}
 
 	svg {
@@ -74,6 +80,8 @@
 	}
 	.body {
 		margin-left: -0.3rem;
+		margin-top: 0.3rem;
+
 		padding: 0.3rem;
 		z-index: 1;
 		position: absolute;

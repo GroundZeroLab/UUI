@@ -11,18 +11,18 @@
 	$: value = items[0];
 </script>
 
-<DropDown clickRequired>
-	<span slot="header">{value}</span>
+<DropDown clickRequired border>
+	<span slot="header" class="header {size}">{value}</span>
 	<div slot="body" class="list">
 		{#each items as item}
-			<Button onClick={() => (value = item)}>
+			<Button onClick={() => (value = item)} {size}>
 				{item}
 			</Button>
 		{/each}
 	</div>
 </DropDown>
 
-<select class={size} {disabled} bind:value />
+<select {disabled} bind:value />
 
 <style>
 	.sm {
@@ -46,18 +46,15 @@
 		cursor: pointer;
 	}
 
-	select:disabled {
-		background-color: var(--bg-color-disabled);
-		color: var(--text-disabled);
-		cursor: not-allowed;
-		opacity: 0.5;
-	}
-
 	.list {
 		display: grid;
 		gap: 0.2rem;
 		min-width: 100px;
-		max-height: 250px;
+		max-height: 150px;
 		overflow: scroll;
+	}
+
+	.list :global(button) {
+		text-align: left;
 	}
 </style>

@@ -14,6 +14,7 @@
 	import Char from '$lib/input/Char.svelte';
 	import RadioElement from '$lib/input/RadioElement.svelte';
 	import Modal from '$lib/box/Modal.svelte';
+	import DropDown from '$lib/input/DropDown.svelte';
 
 	let showModal = false;
 	let toggle = false;
@@ -65,6 +66,7 @@
 	<Card>
 		<div class="flex">
 			<Button>Submit</Button>
+			<DropDown	items={['Option 1', 'Option 2', 'Option 3']} />
 			<Text placeholder="Enter text" size="md" />
 			<Numeric />
 			<Char />
