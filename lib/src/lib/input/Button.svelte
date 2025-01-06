@@ -23,15 +23,17 @@
 
 <style>
 	.sm {
-		zoom: 0.8;
+		font-size: var(--font-size-sm);
 	}
 
 	.md {
-		zoom: 1;
+		height: fit-content;
+		font-size: var(--font-size-md);
 	}
 
 	.lg {
-		zoom: 1.2;
+		height: 2rem;
+		font-size: var(--font-size-lg);
 	}
 
 	:global(:root) {
@@ -44,9 +46,7 @@
 		background-color: var(--primary-bg-color);
 		border: 1px solid var(--border-color);
 		font-weight: bold;
-		font-size: var(--font-size-md);
-		height: fit-content;
-		padding: 0.4rem 0.8rem;
+		padding: 0.3rem 0.6rem;
 		border-radius: var(--border-radius);
 		cursor: pointer;
 		transition: 0.2s;

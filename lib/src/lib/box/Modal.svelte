@@ -13,8 +13,12 @@
 </script>
 
 {#if state}
-	<div class="bg" transition:fade={{ duration: animate ? 150 : 0 }}>
-		<div class="modal">
+	<div
+		class="bg"
+		transition:fade={{ duration: animate ? 150 : 0 }}
+		on:click={() => (state = false)}
+	>
+		<div class="modal" on:click|stopPropagation>
 			<Card {aspect} {size} {status}>
 				<svelte:fragment slot="header">
 					<div class="title">

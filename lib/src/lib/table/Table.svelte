@@ -6,7 +6,7 @@
 	table {
 		width: 100%;
 		border-collapse: collapse;
-		margin: 1rem 0;
+		margin: 0;
 		border: 1px solid var(--border-color);
 		border-radius: var(--border-radius);
 		border-spacing: 0;

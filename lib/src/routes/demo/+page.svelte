@@ -64,9 +64,11 @@
 
 	<Card>
 		<div class="flex">
+			<Button>Submit</Button>
 			<Text placeholder="Enter text" size="md" />
 			<Numeric />
 			<Char />
+			<Button>Submit</Button>
 		</div>
 	</Card>
 
