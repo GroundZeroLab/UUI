@@ -16,6 +16,7 @@
 	import LongText from '$lib/input/LongText.svelte';
 	import Modal from '$lib/box/Modal.svelte';
 	import Table from '$lib/table/Table.svelte';
+	import DropDown from '$lib/input/DropDown.svelte';
 
 	let checked = true;
 	let value = '';
@@ -26,6 +27,8 @@
 	let selectMode = false;
 	let progress = 0;
 	let progressDirection = 5;
+
+	let dropDownList = Array.from({ length: 30 }, (_, i) => `Item ${i + 1}`);
 
 	let inter: undefined | number;
 
@@ -93,6 +96,14 @@
 			<RadioElement size="lg" group="group1" value="1">Radio 1</RadioElement>
 			<RadioElement size="md" group="group1" value="2">Radio 2</RadioElement>
 			<RadioElement size="sm" group="group1" value="3" disabled>Radio 3</RadioElement>
+		</div>
+		<div class="group">
+			<h2>DropDown</h2>
+			<div class="break" />
+			<DropDown size="lg" items={['Item 1', 'Item 2', 'Item 3']} bind:value />
+			<DropDown size="md" items={['Item 1', 'Item 2', 'Item 3']} bind:value />
+			<DropDown size="sm" items={['Item 1', 'Item 2', 'Item 3']} bind:value />
+			<DropDown size="sm" items={dropDownList} bind:value disabled />
 		</div>
 		<div class="group">
 			<h2>Input Text - {value}</h2>

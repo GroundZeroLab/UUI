@@ -23,7 +23,7 @@
 			</DropDownLink>
 		</div>
 	</DropDown>
-	<DropDown>
+	<DropDown clickRequired>
 		<div slot="header">DropDown</div>
 		<div slot="body" class="grid">
 			<DropDownLink href="/">
