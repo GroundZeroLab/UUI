@@ -32,7 +32,7 @@
 <style>
 	.box {
 		max-width: 95vw;
-		width: fit-content;
+		width: 100%;
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
 		display: flex;
