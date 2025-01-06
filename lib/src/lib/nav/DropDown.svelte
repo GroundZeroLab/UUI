@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	export let disabled = false;
 	export let show = false;
+	export let clickRequired = false;
 	let isMobile = false;
 
 	onMount(() => {
@@ -9,12 +11,14 @@
 	});
 </script>
 
+<svelte:body on:click={() => (show = false)} />
+
 <button
-	on:click={() => (show = !show)}
-	on:mouseenter={() => (show = isMobile ? show : true)}
-	on:mouseleave={() => (show = false)}
+	on:click|stopPropagation={() => (show = disabled ? false : !show)}
+	on:mouseenter={() => (show = disabled ? false : clickRequired || isMobile ? show : true)}
+	on:mouseleave={() => (show = disabled ? false : clickRequired ? show : false)}
 >
-	<header>
+	<header class:disabled>
 		<slot name="header" />
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class:hovered={show}
 			><path
@@ -39,7 +43,7 @@
 		background-color: inherit;
 		color: inherit;
 		font-size: inherit;
-		border: inherit;
+		border: none;
 		text-align: inherit;
 		position: relative;
 		padding: 0;
@@ -56,6 +60,12 @@
 		margin-bottom: 0.3rem;
 		font-weight: bold;
 	}
+
+	.disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
 	svg {
 		height: 14px;
 		aspect-ratio: 1/1;
