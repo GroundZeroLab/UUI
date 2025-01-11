@@ -20,19 +20,20 @@
 	>
 		<div class="modal" on:click|stopPropagation>
 			<Card {aspect} {size} {status}>
-				<svelte:fragment slot="header">
-					<div class="title">
-						<span class="left">
-							<slot name="title" />
-						</span>
-						{#if closeButton}
-							<span class="right">
-								<Button size="sm" type="danger" onClick={() => (state = false)}>X</Button>
+				<svelte:fragment slot="title">
+					{#if $$slots.title || closeButton}
+						<div class="title">
+							<span class="left">
+								<slot name="title" />
 							</span>
-						{/if}
-					</div>
+							{#if closeButton}
+								<span class="right">
+									<Button size="sm" type="danger" onClick={() => (state = false)}>X</Button>
+								</span>
+							{/if}
+						</div>
+					{/if}
 				</svelte:fragment>
-
 				<slot />
 				<slot name="footer" slot="footer" />
 			</Card>

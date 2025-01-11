@@ -12,9 +12,9 @@
 	class="box {size ? size : ''}"
 	style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}; {style}"
 >
-	{#if $$slots.header}
+	{#if $$slots.title}
 		<header>
-			<slot name="header" />
+			<slot name="title" />
 		</header>
 	{/if}
 	{#if $$slots.default}
@@ -66,6 +66,15 @@
 
 	header + .content {
 		border-top: 1px solid var(--bd-color);
+	}
+
+	header:empty + .content {
+		border-top: none;
+	}
+
+	header:empty{
+		padding: 0;
+
 	}
 
 	footer {

@@ -186,7 +186,7 @@
 		<h2>Card</h2>
 		<div class="break" />
 		<Card size="sm" aspect="" status="danger">
-			<svelte:fragment slot="header">Header</svelte:fragment>
+			<svelte:fragment slot="title">Header</svelte:fragment>
 			<svelte:fragment>
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
@@ -197,7 +197,7 @@
 			<svelte:fragment slot="footer">Footer</svelte:fragment>
 		</Card>
 		<Card size="sm" status="success">
-			<svelte:fragment slot="header">Header</svelte:fragment>
+			<svelte:fragment slot="title">Header</svelte:fragment>
 			<svelte:fragment>
 				<span
 					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis animi dignissimos
