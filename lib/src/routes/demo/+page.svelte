@@ -47,11 +47,7 @@
 		{/each}
 	</div>
 
-	<Card>
-		<Button onClick={() => (showModal = true)} primary>Open Modal</Button>
-	</Card>
-
-	<Card>
+	<Card size="sm">
 		<List>
 			<ListItem>
 				Item 1
@@ -65,8 +61,9 @@
 
 	<Card>
 		<div class="flex">
+			<Button onClick={() => (showModal = true)} primary>Open Modal</Button>
 			<Button>Submit</Button>
-			<DropDown	items={['Option 1', 'Option 2', 'Option 3']} />
+			<DropDown items={['Option 1', 'Option 2', 'Option 3']} />
 			<Text placeholder="Enter text" size="md" />
 			<Numeric />
 			<Char />
@@ -102,7 +99,6 @@
 		padding: 1rem;
 		margin: auto;
 		max-width: 1200px;
-		text-align: center;
 	}
 
 	.cards {
@@ -111,5 +107,10 @@
 		gap: 0.3rem;
 		justify-content: center;
 		align-items: start;
+	}
+
+	h1,
+	h2 {
+		text-align: center;
 	}
 </style>
