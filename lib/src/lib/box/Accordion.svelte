@@ -14,7 +14,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <Card {size} {status}>
-	<div class="title" on:click|stopPropagation={toggle} slot="header" class:open>
+	<div class="title" on:click|stopPropagation={toggle} slot="title" class:open>
 		<span class="chevron" class:open></span>
 		<span><slot name="title" /></span>
 	</div>

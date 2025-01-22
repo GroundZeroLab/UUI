@@ -32,7 +32,7 @@
 	<div class="cards">
 		{#each new Array(3) as _, i}
 			<Card size="sm">
-				<svelte:fragment slot="header">Here is a Card {i}</svelte:fragment>
+				<svelte:fragment slot="title">Here is a Card {i}</svelte:fragment>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quasi illo temporibus ratione
 				facere beatae quam nobis culpa similique repellat doloribus odio, asperiores tempora? Quo deleniti
 				facilis enim rem magnam?
