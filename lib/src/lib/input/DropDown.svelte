@@ -51,10 +51,29 @@
 		gap: 0.2rem;
 		min-width: 100px;
 		max-height: 150px;
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 
 	.list :global(button) {
 		text-align: left;
 	}
+
+	.list::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	.list::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	.list::-webkit-scrollbar-thumb {
+		background: #888;
+		border-radius: 4px;
+	}
+
+	.list::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+	
+
 </style>
