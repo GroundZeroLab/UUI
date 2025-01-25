@@ -5,20 +5,15 @@
 
 	export let disabled: boolean = false;
 	export let size: Size = 'md';
-	export let items: string[] = [''];
-	export let value: string = items[0];
-
-	$: value = items[0];
+	export let value = '';
 </script>
 
-<DropDown clickRequired border>
-	<span slot="header" class="header {size}">{value}</span>
+<DropDown clickRequired border {disabled}>
+	<span slot="header" class="header {size}">
+		<slot name="selected" />
+	</span>
 	<div slot="body" class="list">
-		{#each items as item}
-			<Button onClick={() => (value = item)} {size}>
-				{item}
-			</Button>
-		{/each}
+		<slot name="list" />
 	</div>
 </DropDown>
 
@@ -74,6 +69,4 @@
 	.list::-webkit-scrollbar-thumb:hover {
 		background: #555;
 	}
-	
-
 </style>

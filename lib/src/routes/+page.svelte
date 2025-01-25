@@ -17,6 +17,8 @@
 	import Modal from '$lib/box/Modal.svelte';
 	import Table from '$lib/table/Table.svelte';
 	import DropDown from '$lib/input/DropDown.svelte';
+	import DropDownItem from '$lib/input/DropDownItem.svelte';
+	import { writable } from 'svelte/store';
 
 	let checked = true;
 	let value = '';
@@ -29,6 +31,7 @@
 	let progressDirection = 5;
 
 	let dropDownList = Array.from({ length: 30 }, (_, i) => `Item ${i + 1}`);
+	let dropDownListSelected = writable(dropDownList[0]);
 
 	let inter: undefined | number;
 
@@ -50,6 +53,8 @@
 			clicked = false;
 		}, 300);
 	}
+
+	const items = ['Item 1', 'Item 2', 'Item 3'];
 </script>
 
 <div class="groups">
@@ -101,10 +106,38 @@
 		<div class="group">
 			<h2>DropDown</h2>
 			<div class="break" />
-			<DropDown size="lg" items={['Item 1', 'Item 2', 'Item 3']} bind:value />
-			<DropDown size="md" items={['Item 1', 'Item 2', 'Item 3']} bind:value />
-			<DropDown size="sm" items={['Item 1', 'Item 2', 'Item 3']} bind:value />
-			<DropDown size="sm" items={dropDownList} bind:value disabled />
+			<DropDown size="lg" bind:value={$dropDownListSelected}>
+				<span slot="selected">{$dropDownListSelected}</span>
+				<svelte:fragment slot="list">
+					{#each dropDownList as item}
+						<DropDownItem value={item} bind:selection={$dropDownListSelected}>{item}</DropDownItem>
+					{/each}
+				</svelte:fragment>
+			</DropDown>
+			<DropDown size="md" bind:value={$dropDownListSelected}>
+				<span slot="selected">{$dropDownListSelected}</span>
+				<svelte:fragment slot="list">
+					{#each dropDownList as item}
+						<DropDownItem value={item} bind:selection={$dropDownListSelected}>{item}</DropDownItem>
+					{/each}
+				</svelte:fragment>
+			</DropDown>
+			<DropDown size="sm" bind:value={$dropDownListSelected}>
+				<span slot="selected">{$dropDownListSelected}</span>
+				<svelte:fragment slot="list">
+					{#each dropDownList as item}
+						<DropDownItem value={item} bind:selection={$dropDownListSelected}>{item}</DropDownItem>
+					{/each}
+				</svelte:fragment>
+			</DropDown>
+			<DropDown size="sm" bind:value={$dropDownListSelected} disabled>
+				<span slot="selected">{$dropDownListSelected}</span>
+				<svelte:fragment slot="list">
+					{#each dropDownList as item}
+						<DropDownItem value={item} bind:selection={$dropDownListSelected}>{item}</DropDownItem>
+					{/each}
+				</svelte:fragment>
+			</DropDown>
 		</div>
 		<div class="group">
 			<h2>Input Text - {value}</h2>
