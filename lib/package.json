@@ -1,6 +1,6 @@
 {
 	"name": "@gzlab/uui",
-	"version": "0.0.28",
+	"version": "0.0.29",
 	"scripts": {
 		"dev": "bun --bun vite dev --host",
 		"build": "vite build && npm run package",

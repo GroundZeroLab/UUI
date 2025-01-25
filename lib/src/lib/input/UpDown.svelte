@@ -11,8 +11,8 @@
 
 	const OFFSET = {
 		sm: 0.6,
-		md: 0.73,
-		lg: 0.8
+		md: 0.6,
+		lg: 0.70
 	};
 
 	const currentOffset = OFFSET[size || 'md'];
@@ -55,17 +55,17 @@
 		height: 0.8rem;
 		font-size: 14px;
 		font-size: var(--font-size-sm);
-		padding: 0.1rem 0.1rem 0.1rem 0.15rem;
+		padding: 0.1rem 0.1rem 0.1rem 0.3rem;
 	}
 	.md :global(input) {
 		height: 1rem;
 		font-size: var(--font-size-md);
-		padding: 0.1rem 0.1rem 0.1rem 0.2rem;
+		padding: 0.1rem 0.1rem 0.1rem 0.3rem;
 	}
 	.lg :global(input) {
 		height: 1.2rem;
 		font-size: var(--font-size-lg);
-		padding: 0.15rem 0.1rem 0.2rem 0.4rem;
+		padding: 0.15rem 0.1rem 0.2rem 0.5rem;
 	}
 
 	.input :global(input:active),
