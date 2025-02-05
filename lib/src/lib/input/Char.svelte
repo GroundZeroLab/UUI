@@ -35,6 +35,7 @@
 
 	function onChange(d: boolean) {
 		if (disabled || value === null) return null;
+		internalValue = charToNumber(value);
 		if (d) internalValue++;
 		else internalValue--;
 		value = numberToChar(internalValue);
@@ -49,9 +50,7 @@
 		return value.toUpperCase();
 	}
 
-	$: value = check(value);
 </script>
-
 <UpDown {disabled} {size} {status} {onChange} maxLength={max.toString().length}>
-	<input type="text" bind:value class={size} {disabled} {name} />
+	<input type="text" bind:value class={size} {disabled} {name} on:change={() => check(value)} />
 </UpDown>
