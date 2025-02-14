@@ -11,7 +11,7 @@
 <label class={size}>
 	<input type="checkbox" bind:checked {name} />
 	<span class="switch" class:green>
-		<span class="circle" />
+		<span class="circle"></span>
 	</span>
 	<slot />
 </label>

@@ -61,13 +61,13 @@
 	<div class="groups">
 		<div class="group">
 			<h2>Button - {clicked}</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<Button primary={false} size="lg" {onClick}>Secondary</Button>
 			<Button primary={false} size="lg" active {onClick}>Secondary</Button>
 			<Button primary size="md" {onClick}>Primary</Button>
 			<Button disabled size="sm" {onClick}>Disabled</Button>
 			<Button disabled size="sm" type="danger" {onClick}>Disabled Danger</Button>
-			<div class="break" />
+			<div class="break"></div>
 			<Button size="md" type="danger" {onClick}>Danger</Button>
 			<Button size="md" type="info" {onClick}>Info</Button>
 			<Button size="md" type="success" {onClick}>Sucess</Button>
@@ -75,14 +75,14 @@
 		</div>
 		<div class="group">
 			<h2>Switch</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<Switch size="lg" bind:checked>{checked ? 'On' : 'Off'}</Switch>
 			<Switch size="md" bind:checked>{checked ? 'On' : 'Off'}</Switch>
 			<Switch size="sm" bind:checked>{checked ? 'On' : 'Off'}</Switch>
 		</div>
 		<div class="group">
 			<h2>Numeric</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<Numer size="lg" bind:value={numberValue} status="danger" />
 			<Numer bind:value={numberValue} status="success" />
 			<Numer bind:value={numberValue} />
@@ -90,7 +90,7 @@
 		</div>
 		<div class="group">
 			<h2>Character - {charValue}</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<Char size="lg" bind:value={charValue} status="danger" />
 			<Char status="success" />
 			<Char />
@@ -98,14 +98,14 @@
 		</div>
 		<div class="group">
 			<h2>RadioButton</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<RadioElement size="lg" group="group1" value="1">Radio 1</RadioElement>
 			<RadioElement size="md" group="group1" value="2">Radio 2</RadioElement>
 			<RadioElement size="sm" group="group1" value="3" disabled>Radio 3</RadioElement>
 		</div>
 		<div class="group">
 			<h2>DropDown</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<DropDown size="lg" bind:value={$dropDownListSelected}>
 				<span slot="selected">{$dropDownListSelected}</span>
 				<svelte:fragment slot="list">
@@ -141,7 +141,7 @@
 		</div>
 		<div class="group">
 			<h2>Input Text - {value}</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<Text placeholder="Placeholder" value="Value" disabled size="lg" status="danger" />
 			<Text placeholder="Placeholder" bind:value size="md" status="success" />
 			<Text placeholder="Placeholder" size="sm" bind:value status="warning" />
@@ -149,7 +149,7 @@
 		</div>
 		<div class="group">
 			<h2>Long text - {value}</h2>
-			<div class="break" />
+			<div class="break"></div>
 			<LongText placeholder="Placeholder" size="lg" bind:value status="danger" />
 			<LongText placeholder="Placeholder" bind:value status="success" />
 			<LongText placeholder="Placeholder" size="sm" bind:value status="warning" />
@@ -159,7 +159,7 @@
 
 	<div class="group">
 		<h2>Accordion</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<Accordion status="danger" size="lg">
 			<svelte:fragment slot="title">Title</svelte:fragment>
 			<span
@@ -200,7 +200,7 @@
 				>{selectMode ? 'List' : 'Selction'}</Button
 			>
 		</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<List bind:checkbox={selectMode} let:checkbox let:parentChecked>
 			<ListItem size="sm" {checkbox} {parentChecked}>
 				First
@@ -217,7 +217,7 @@
 
 	<div class="group">
 		<h2>Card</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<Card size="sm" aspect="" status="danger">
 			<svelte:fragment slot="title">Header</svelte:fragment>
 			<svelte:fragment>
@@ -258,13 +258,13 @@
 
 	<div class="group">
 		<h2>Gauge</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<Loading show={true} showText={false} size="lg" />
 		<Loading show={true} showText={true} size="md" />
 		<Loading show={true} showText={true} size="sm">Custom</Loading>
-		<div class="break" />
+		<div class="break"></div>
 		<h2>Progress Bar</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<ProgressBar value={50} />
 		<ProgressBar value={75} />
 		<ProgressBar value={progress} />
@@ -272,7 +272,7 @@
 
 	<div class="group">
 		<h2>Tooltip</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<span>
 			Lorem ipsum dolor,<Tooltip>Lorem ipsum dolor,Lorem ipsum dolor</Tooltip>
 			sit amet consectetur adipisicing elit. Doloribus minus est a facilis alias laborum
@@ -283,7 +283,7 @@
 		<h2 class="v-align">
 			Modal - <Button size="md" onClick={() => (modalOpen = !modalOpen)}>Open</Button>
 		</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<Modal bind:state={modalOpen}>
 			<svelte:fragment slot="title">Title</svelte:fragment>
 			<span
@@ -295,7 +295,7 @@
 	</div>
 	<div class="group">
 		<h2>Table</h2>
-		<div class="break" />
+		<div class="break"></div>
 		<Table>
 			<thead>
 				<tr>

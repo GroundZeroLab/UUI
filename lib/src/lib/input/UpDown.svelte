@@ -29,7 +29,7 @@
 		<Button onClick={() => onChange(true)} {disabled} {size} type="icon">&#9650;</Button>
 		<Button onClick={() => onChange(false)} {disabled} {size} type="icon">&#9660;</Button>
 	</div>
-	<div class:disabled />
+	<div class:disabled></div>
 </div>
 
 <style>

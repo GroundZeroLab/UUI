@@ -29,7 +29,7 @@
 		{value}
 		class={size}
 		on:input={onInput}
-	/>
+	></textarea>
 </div>
 
 <style>

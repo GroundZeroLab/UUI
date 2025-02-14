@@ -4,7 +4,7 @@
 </script>
 
 <div class="bar">
-	<div class="bar" style="--value:{valuePourcent}" />
+	<div class="bar" style="--value:{valuePourcent}"></div>
 </div>
 
 <style>

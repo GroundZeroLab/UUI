@@ -17,7 +17,7 @@
 	</div>
 </DropDown>
 
-<select {disabled} bind:value />
+<select {disabled} bind:value></select>
 
 <style>
 	.sm {

@@ -9,7 +9,7 @@
 
 <Button type="icon" onClick={() => (checked = !checked)}>
 	<label class:checked class:disabled class={size}>
-		<span />
+		<span></span>
 		<slot />
 	</label>
 </Button>
