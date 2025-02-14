@@ -12,8 +12,8 @@
 	},
 	"exports": {
 		"./*": {
-			"svelte": "./dist/*.svelte",
 			"types": "./dist/*.d.ts",
+			"svelte": "./dist/*.svelte",
 			"import": "./dist/*",
 			"require": "./dist/*"
 		}
