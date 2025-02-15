@@ -1,8 +1,8 @@
 {
 	"name": "@gzlab/uui",
-	"version": "0.0.35",
+	"version": "0.1.00",
 	"scripts": {
-		"dev": "bun --bun vite dev --host",
+		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -10,20 +10,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
-	"exports": {
-		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.js"
-		},
-		"./*": {
-			"types": "./dist/*.d.ts",
-			"svelte": "./dist/*.svelte",
-			"import": "./dist/*",
-			"require": "./dist/*"
-		}
-	},
 	"files": [
-		"dist/**/*",
+		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*"
 	],
@@ -33,6 +21,12 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},
