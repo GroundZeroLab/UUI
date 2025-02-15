@@ -1,6 +1,6 @@
 {
 	"name": "@gzlab/uui",
-	"version": "0.1.00",
+	"version": "0.1.01",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -25,6 +25,9 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./main.css":{
+			"svelte": "./dist/main.css"
 		}
 	},
 	"peerDependencies": {
