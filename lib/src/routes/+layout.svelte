@@ -1,9 +1,6 @@
 <script>
-	import List from '$lib/list/List.svelte';
-	import ListItem from '$lib/list/ListItem.svelte';
 	import DropDown from '$lib/nav/DropDown.svelte';
 	import DropDownLink from '$lib/nav/DropDownLink.svelte';
-	import SideNav from '$lib/nav/SideNav.svelte';
 
 	import TopNav from '$lib/nav/TopNav.svelte';
 </script>
