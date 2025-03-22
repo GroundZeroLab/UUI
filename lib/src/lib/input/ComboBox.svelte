@@ -6,6 +6,7 @@
 	export let disabled: boolean = false;
 	export let size: Size = 'md';
 	export let value = '';
+	export let name = '';
 </script>
 
 <DropDown clickRequired border {disabled}>
@@ -17,7 +18,7 @@
 	</div>
 </DropDown>
 
-<select {disabled} bind:value></select>
+<select {disabled} bind:value {name}></select>
 
 <style>
 	.sm {
