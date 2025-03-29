@@ -1,6 +1,26 @@
 <script lang="ts">
   import "$lib/main.css";
-  import { Button, Switch, Text, Card, ListItem, List, Accordion, Loading, ProgressBar, ToolTip, Numeric, Char, RadioElement, LongText, Modal, Table, ComboBox, ComboBoxElement } from "$lib/index.js";
+  import {
+    Button,
+    Switch,
+    Text,
+    Card,
+    ListItem,
+    List,
+    Accordion,
+    Loading,
+    ProgressBar,
+    ToolTip,
+    Numeric,
+    Char,
+    RadioElement,
+    LongText,
+    Modal,
+    Table,
+    ComboBox,
+    ComboBoxElement,
+    File,
+  } from "$lib/index.js";
   import { writable } from "svelte/store";
 
   let checked = true;
@@ -16,7 +36,7 @@
   let ComboBoxList = Array.from({ length: 30 }, (_, i) => `Item ${i + 1}`);
   let ComboBoxListSelected = writable(ComboBoxList[0]);
 
-  let inter: Timer;
+  let inter: number;
 
   let modalOpen = false;
 
@@ -79,6 +99,14 @@
       <Char status="success" />
       <Char />
       <Char size="sm" max="Z" value={charValue} status="warning" />
+    </div>
+    <div class="group">
+      <h2>File</h2>
+      <div class="break"></div>
+      <File multiple status="danger" />
+      <File disabled/>
+      <File multiple status="success" />
+      <File multiple status="warning"/>
     </div>
     <div class="group">
       <h2>RadioButton</h2>
