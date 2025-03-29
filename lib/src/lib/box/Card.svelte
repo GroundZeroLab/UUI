@@ -4,12 +4,14 @@
 	export let size: Size = undefined;
 	export let aspect: string = '';
 	export let status: Status = undefined;
+	export let disabled: boolean = false;
 	$: ar = aspect.split('/');
 	$: style = aspect.length > 0 ? `--arw:${ar[0]}; --arh:${ar[1]}` : 'auto';
 </script>
 
 <div
 	class="box {size ? size : ''}"
+	class:disabled
 	style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}; {style}"
 >
 	{#if $$slots.title}
@@ -89,5 +91,11 @@
 		display: none;
 		border-top: none;
 		border-bottom: none;
+	}
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		cursor: not-allowed;
 	}
 </style>
