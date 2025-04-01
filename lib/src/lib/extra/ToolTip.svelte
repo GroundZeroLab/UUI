@@ -28,8 +28,9 @@
 
 	.tip {
 		position: absolute;
+		display: block;
 		top: 1.5rem;
-		right: -200%;
+		transform: translateX(-40%);
 		background-color: var(--border-color);
 		color: var(--text-color);
 		padding: 0.5rem;
@@ -38,8 +39,12 @@
 		opacity: 0;
 		pointer-events: none;
 		transition: 0.2s;
-		width: 10rem;
 	}
+
+	.tip > :global(*) {
+		display: block;
+	}
+	
 
 	.icon:hover + .tip {
 		opacity: 1;

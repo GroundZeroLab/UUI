@@ -1,6 +1,25 @@
 <script lang="ts">
   import "$lib/main.css";
-  import { Button, Switch, Text, Card, ListItem, List, Accordion, Loading, ProgressBar, ToolTip, Numeric, Char, RadioElement, LongText, Modal, Table, ComboBox, ComboBoxElement } from "$lib/index.js";
+  import {
+    Button,
+    Switch,
+    Text,
+    Card,
+    ListItem,
+    List,
+    Accordion,
+    Loading,
+    ProgressBar,
+    ToolTip,
+    Numeric,
+    Char,
+    RadioElement,
+    LongText,
+    Modal,
+    Table,
+    ComboBox,
+    ComboBoxElement,
+  } from "$lib/index.js";
   import { writable } from "svelte/store";
 
   let checked = true;
@@ -16,7 +35,7 @@
   let ComboBoxList = Array.from({ length: 30 }, (_, i) => `Item ${i + 1}`);
   let ComboBoxListSelected = writable(ComboBoxList[0]);
 
-  let inter: Timer;
+  let inter: number;
 
   let modalOpen = false;
 
@@ -292,7 +311,10 @@
     <h2>Tooltip</h2>
     <div class="break"></div>
     <span>
-      Lorem ipsum dolor,<ToolTip>Lorem ipsum dolor,Lorem ipsum dolor</ToolTip>
+      Lorem ipsum dolor,<ToolTip>
+        <span class="tooltip">Lorem ipsum dolor,Lorem ipsum dolor</span
+        ></ToolTip
+      >
       sit amet consectetur adipisicing elit. Doloribus minus est a facilis alias
       laborum
     </span>
@@ -379,5 +401,9 @@
   .v-align {
     display: flex;
     gap: 0.5rem;
+  }
+
+  .tooltip {
+    width: 200px;
   }
 </style>
