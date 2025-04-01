@@ -6,6 +6,7 @@
 	export let primary: boolean = false;
 	export let disabled: boolean = false;
 	export let active: boolean = false;
+	export let formaction: string = '';
 
 	export let size: Size = 'md';
 	export let onClick: () => void = () => {};
@@ -19,6 +20,7 @@
 	class:active
 	class="{size} {type}"
 	on:click={disabled ? undefined : onClick}
+	formaction={formaction}
 >
 	<slot />
 </button>

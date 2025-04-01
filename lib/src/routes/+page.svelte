@@ -19,6 +19,7 @@
     Table,
     ComboBox,
     ComboBoxElement,
+    File,
   } from "$lib/index.js";
   import { writable } from "svelte/store";
 
@@ -98,6 +99,14 @@
       <Char status="success" />
       <Char />
       <Char size="sm" max="Z" value={charValue} status="warning" />
+    </div>
+    <div class="group">
+      <h2>File</h2>
+      <div class="break"></div>
+      <File multiple status="danger" />
+      <File disabled />
+      <File multiple status="success" />
+      <File multiple status="warning" />
     </div>
     <div class="group">
       <h2>RadioButton</h2>
@@ -265,6 +274,7 @@
     </Card>
     <Card size="sm" status="success">
       <svelte:fragment slot="title">Header</svelte:fragment>
+      <svelte:fragment slot="legend">legend</svelte:fragment>
       <svelte:fragment>
         <span
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
