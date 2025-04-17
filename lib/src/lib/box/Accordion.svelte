@@ -5,6 +5,9 @@
 	export let open = false;
 	export let size: Size = 'sm';
 	export let status: Status = undefined;
+	export let disabled: boolean = false;
+	export let hover: boolean = false;
+	export let selected: boolean = false;
 
 	function toggle() {
 		open = !open;
@@ -13,7 +16,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<Card {size} {status}>
+<Card {size} {status} {disabled} {hover} {selected}>
 	<div class="title" on:click|stopPropagation={toggle} slot="title" class:open>
 		<span class="chevron" class:open></span>
 		<span><slot name="title" /></span>

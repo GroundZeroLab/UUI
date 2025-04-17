@@ -107,6 +107,9 @@
       <File disabled size="md"/>
       <File multiple status="success" size="sm"/>
       <File multiple status="warning" size="sm"/>
+      <File multiple status="warning" size="sm" hover/>
+      <File multiple size="sm" selected/>
+
     </div>
     <div class="group">
       <h2>RadioButton</h2>
@@ -174,6 +177,9 @@
       <Text placeholder="Placeholder" bind:value size="md" status="success" />
       <Text placeholder="Placeholder" size="sm" bind:value status="warning" />
       <Text placeholder="Placeholder" size="sm" bind:value />
+      <Text placeholder="Placeholder" size="sm" bind:value selected/>
+      <Text placeholder="Placeholder" size="sm" bind:value hover/>
+
     </div>
     <div class="group">
       <h2>Long text - {value}</h2>
@@ -192,13 +198,15 @@
         status="warning"
       />
       <LongText placeholder="Placeholder" size="sm" bind:value />
+      <LongText placeholder="Placeholder" size="sm" bind:value selected/>
+      <LongText placeholder="Placeholder" size="sm" bind:value hover/>
     </div>
   </div>
 
   <div class="group">
     <h2>Accordion</h2>
     <div class="break"></div>
-    <Accordion status="danger" size="lg">
+    <Accordion status="danger" size="lg" disabled>
       <svelte:fragment slot="title">Title</svelte:fragment>
       <span
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
@@ -216,7 +224,7 @@
         architecto minus omnis.
       </span>
     </Accordion>
-    <Accordion status="warning" size="sm">
+    <Accordion status="warning" size="sm" hover>
       <svelte:fragment slot="title">Title</svelte:fragment>
       <span
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
@@ -226,6 +234,15 @@
       </span>
     </Accordion>
     <Accordion size="sm">
+      <svelte:fragment slot="title">Title</svelte:fragment>
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
+        animi dignissimos fugiat provident tempora deleniti eligendi ducimus
+        fugit, minus ullam? Tempora dolor illo consectetur deleniti nesciunt
+        architecto minus omnis.
+      </span>
+    </Accordion>
+    <Accordion size="sm" selected>
       <svelte:fragment slot="title">Title</svelte:fragment>
       <span
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
@@ -260,7 +277,7 @@
   <div class="group">
     <h2>Card</h2>
     <div class="break"></div>
-    <Card size="sm" aspect="" status="danger">
+    <Card size="sm" aspect="" status="danger" hover={true}>
       <svelte:fragment slot="title">Header</svelte:fragment>
       <svelte:fragment>
         <span
@@ -294,6 +311,14 @@
       </span>
     </Card>
     <Card size="lg">
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
+        animi dignissimos fugiat provident tempora deleniti eligendi ducimus
+        fugit, minus ullam? Tempora dolor illo consectetur deleniti nesciunt
+        architecto minus omnis.
+      </span>
+    </Card>
+    <Card size="lg" selected>
       <span
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe omnis
         animi dignissimos fugiat provident tempora deleniti eligendi ducimus

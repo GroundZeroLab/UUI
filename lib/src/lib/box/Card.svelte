@@ -5,6 +5,9 @@
   export let aspect: string = "";
   export let status: Status = undefined;
   export let disabled: boolean = false;
+  export let hover: boolean = false;
+  export let selected: boolean = false;
+
   $: ar = aspect.split("/");
   $: style = aspect.length > 0 ? `--arw:${ar[0]}; --arh:${ar[1]}` : "auto";
 </script>
@@ -12,6 +15,8 @@
 <div
   class="box {size ? size : ''}"
   class:disabled
+  class:hover
+  class:selected
   style="--bd-color:{status
     ? `var(--${status})`
     : 'var(--border-color)'}; {style}"
@@ -42,6 +47,14 @@
 </div>
 
 <style>
+  .box.hover:hover {
+    --bd-color: var(--focus-color) !important;
+  }
+
+  .box.selected {
+    --bd-color: var(--focus-color) !important;
+  }
+
   .box {
     border: 1px solid var(--bd-color);
     border-radius: var(--border-radius);
@@ -50,6 +63,10 @@
     aspect-ratio: var(--arw) / var(--arh);
     font-size: var(--font-size-md);
     position: relative;
+  }
+
+  .box.selected {
+    box-shadow: 0 0 0 2px var(--selected-color);
   }
 
   .legend-wrapper {

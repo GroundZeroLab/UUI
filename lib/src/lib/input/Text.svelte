@@ -9,6 +9,8 @@
 	export let size = 'md';
 	export let hide = false;
 	export let status: Status = undefined;
+	export let hover = false;
+	export let selected = false;
 
 	function onInput(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
 		if (!e || !e.target) return;
@@ -24,6 +26,8 @@
 	{placeholder}
 	{disabled}
 	{value}
+	class:selected
+	class:hover
 	class={`${size}`}
 	style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}"
 	on:input={onInput}
@@ -56,5 +60,12 @@
 	input:focus {
 		border-color: var(--primary-color);
 		outline: none;
+	}
+
+	input.selected {
+		border-color: var(--focus-color);
+	}
+	input.hover:hover {
+		border-color: var(--focus-color);
 	}
 </style>

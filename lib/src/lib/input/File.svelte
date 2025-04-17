@@ -12,6 +12,8 @@
     status = undefined,
     disabled = false,
     size = undefined,
+    hover = false,
+    selected = false,
   } = $props<{
     label?: string;
     file?: File | File[] | null;
@@ -22,6 +24,8 @@
     status?: Status;
     disabled?: boolean;
     size?: Size | undefined;
+    hover?: boolean;
+    selected?: boolean;
   }>();
 
   const onChange = (event: Event) => {
@@ -85,7 +89,7 @@
   ondragover={onDragOver}
   ondragenter={onDragEnter}
 >
-  <Card bind:status {disabled}>
+  <Card bind:status {disabled} {hover} {selected}>
     <div class="cont" class:disabled>
       {#if file}
         <div class="name">

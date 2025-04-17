@@ -10,6 +10,8 @@
 	export let cols = 20;
 	export let rows = 3;
 	export let status: Status = undefined;
+	export let hover = false;
+	export let selected = false;
 
 	function onInput(e: Event & { currentTarget: EventTarget & HTMLTextAreaElement }) {
 		if (!e || !e.target) return;
@@ -18,7 +20,7 @@
 	}
 </script>
 
-<div class="border" style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}">
+<div class="border" style="--bd-color:{status ? `var(--${status})` : 'var(--border-color)'}" class:hover class:selected>
 	<textarea
 		{name}
 		{id}
@@ -28,6 +30,7 @@
 		{cols}
 		{value}
 		class={size}
+
 		on:input={onInput}
 	></textarea>
 </div>
@@ -47,7 +50,17 @@
 	.border {
 		border: 1px solid var(--bd-color);
 		border-radius: var(--border-radius);
+
 	}
+
+	.border.selected {
+		border-color: var(--focus-color);
+	}
+
+	.border.hover:hover {
+		border-color: var(--focus-color);
+	}
+
 	textarea {
 		font-family:
 			system-ui,
