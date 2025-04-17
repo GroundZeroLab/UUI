@@ -103,10 +103,10 @@
     <div class="group">
       <h2>File</h2>
       <div class="break"></div>
-      <File multiple status="danger" />
-      <File disabled />
-      <File multiple status="success" />
-      <File multiple status="warning" />
+      <File multiple status="danger" size="lg"/>
+      <File disabled size="md"/>
+      <File multiple status="success" size="sm"/>
+      <File multiple status="warning" size="sm"/>
     </div>
     <div class="group">
       <h2>RadioButton</h2>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Status } from "$lib/index.js";
+  import type { Size, Status } from "$lib/index.js";
   import { Card } from "../box/index.js";
   import Button from "./Button.svelte";
 
@@ -11,6 +11,7 @@
     multiple = false,
     status = undefined,
     disabled = false,
+    size = undefined,
   } = $props<{
     label?: string;
     file?: File | File[] | null;
@@ -20,6 +21,7 @@
     multiple?: boolean;
     status?: Status;
     disabled?: boolean;
+    size?: Size | undefined;
   }>();
 
   const onChange = (event: Event) => {
@@ -76,7 +78,8 @@
 </script>
 
 <div
-  class="file-input"
+  class="file-input {size}"
+  class:disabled
   role="region"
   ondrop={onDrop}
   ondragover={onDragOver}
@@ -84,7 +87,6 @@
 >
   <Card bind:status {disabled}>
     <div class="cont" class:disabled>
-      <!-- <p>{file?.name || "No file selected"}</p> -->
       {#if file}
         <div class="name">
           {#if Array.isArray(file)}
@@ -102,7 +104,7 @@
             </div>
           {/if}
         </div>
-        <Button type="danger" onClick={() => (file = null)}>
+        <Button type="danger" onClick={() => (file = null)} {size}>
           Clear
           {#if multiple}
             All
@@ -111,7 +113,7 @@
       {:else}
         <p>Drop the file in the box</p>
         <p>or</p>
-        <Button type="info"><label for={id}>Browse file</label></Button>
+        <Button type="info" {size}><label for={id}>Browse file</label></Button>
       {/if}
     </div>
   </Card>
@@ -129,15 +131,22 @@
 />
 
 <style>
-  .file-input {
-    width: fit-content;
+  .file-input.sm :global(.box){
+    font-size: var(--font-size-sm) !important;
+  }
+  .file-input.md :global(.box){
+    font-size: var(--font-size-md) !important;
+  }
+  .file-input.lg :global(.box){
+    font-size: var(--font-size-lg) !important;
   }
   .cont {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.6rem;
-    font-size: 1rem;
+    width: 100%;
+    height: 100%;
   }
   .cont label {
     white-space: nowrap;
@@ -145,7 +154,6 @@
   }
   .cont p {
     margin: 0;
-    font-size: 0.9rem;
   }
   .file-item {
     display: flex;
