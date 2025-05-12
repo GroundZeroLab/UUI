@@ -123,7 +123,6 @@
   {id}
   {name}
   {accept}
-  bind:files={file}
   onchange={onChange}
   hidden
   {multiple}
