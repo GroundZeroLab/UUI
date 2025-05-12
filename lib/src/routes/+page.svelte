@@ -41,7 +41,7 @@
 
   let modalOpen = $state(false);
 
-  let file = $state<FileList | null | undefined>(null)
+  let file = $state<File[]>([])
 
   onMount(() => {
     clearInterval(inter);
@@ -65,6 +65,8 @@
   }
 
   const items = ["Item 1", "Item 2", "Item 3"];
+
+  $effect(() => console.log(file))
 </script>
 
 <div class="groups">
@@ -115,7 +117,7 @@
       <File multiple status="success" size="sm" />
       <File multiple status="warning" size="sm" />
       <File multiple status="warning" size="sm" hover />
-      <File multiple size="sm" selected />
+      <File size="sm" selected />
     </div>
     <div class="group">
       <h2>RadioButton</h2>

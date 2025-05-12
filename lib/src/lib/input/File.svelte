@@ -4,7 +4,7 @@
   import Button from "./Button.svelte";
 
   let {
-    file = $bindable<FileList | null | undefined>(null),
+    file = $bindable<File[]>([]),
     name,
     id = Math.random().toString(36).substring(2, 15),
     accept = undefined,
@@ -16,7 +16,7 @@
     selected = false,
   } = $props<{
     label?: string;
-    file?: FileList | null | undefined;
+    file?: File[];
     name?: string;
     id?: string;
     accept?: string | null | undefined;
@@ -30,9 +30,9 @@
 
   const onChange = (event: Event) => {
     const input = event.target as HTMLInputElement;
-    const f = input.files;
-    if (f) {
-      file = f;
+    console.log(input);
+    if (input.files) {
+      file = Array.from(input.files) as File[];
     }
   };
 
@@ -41,11 +41,10 @@
     event.stopPropagation();
     const droppedFiles = event.dataTransfer?.files;
     if (droppedFiles && droppedFiles.length > 0) {
-      if (multiple) {
+      if (!multiple) file = [droppedFiles[0]];
+      else {
         const currentFiles = Array.isArray(file) ? file : [];
         file = [...currentFiles, ...Array.from(droppedFiles)];
-      } else {
-        file = droppedFiles[0];
       }
     }
   };
@@ -73,7 +72,7 @@
   };
 
   $effect(() => {
-    if (!file || !file.length) file = null;
+    if (!file) file = [];
   });
 </script>
 
@@ -85,24 +84,20 @@
   ondragover={onDragOver}
   ondragenter={onDragEnter}
 >
+  {multiple}
+
   <Card bind:status {disabled} {hover} {selected}>
     <div class="cont" class:disabled>
-      {#if file}
+      {#if file && file.length}
         <div class="name">
-          {#if Array.isArray(file)}
-            {#each file as f, i}
-              <div class="file-item">
-                <Button type="danger" onClick={() => deleteFile(i)}>
-                  <span class="remove">✕</span>
-                </Button>
-                <p>{f.name}</p>
-              </div>
-            {/each}
-          {:else}
+          {#each file as f, i}
             <div class="file-item">
-              <p>{file.name}</p>
+              <Button type="danger" onClick={() => deleteFile(i)}>
+                <span class="remove">✕</span>
+              </Button>
+              <p>{f.name}</p>
             </div>
-          {/if}
+          {/each}
         </div>
         <Button type="danger" onClick={() => (file = null)} {size}>
           Clear
