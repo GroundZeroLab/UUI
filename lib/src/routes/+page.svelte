@@ -22,32 +22,39 @@
     File,
   } from "$lib/index.js";
   import { writable } from "svelte/store";
+  import { onDestroy, onMount } from "svelte";
 
-  let checked = true;
-  let value = "";
-  let numberValue = 0;
-  let charValue = "A";
+  let checked = $state(true);
+  let value = $state("");
+  let numberValue = $state(0);
+  let charValue = $state("A");
 
-  let clicked = false;
-  let selectMode = false;
-  let progress = 0;
-  let progressDirection = 5;
+  let clicked = $state(false);
+  let selectMode = $state(false);
+  let progress = $state(0);
+  let progressDirection = $state(5);
 
   let ComboBoxList = Array.from({ length: 30 }, (_, i) => `Item ${i + 1}`);
   let ComboBoxListSelected = writable(ComboBoxList[0]);
 
   let inter: number;
 
-  let modalOpen = false;
+  let modalOpen = $state(false);
 
-  $: {
+  let file = $state<FileList | null | undefined>(null)
+
+  onMount(() => {
     clearInterval(inter);
     inter = setInterval(() => {
       progress = progress + progressDirection;
       if (progress === 105) progressDirection = -5;
       if (progress === -5) progressDirection = 5;
     }, 1000);
-  }
+  });
+
+  onDestroy(() => {
+    clearInterval(inter);
+  });
 
   function onClick() {
     clicked = true;
@@ -58,6 +65,9 @@
   }
 
   const items = ["Item 1", "Item 2", "Item 3"];
+  $effect(() => {
+    console.log(file)
+  })
 </script>
 
 <div class="groups">
@@ -103,13 +113,12 @@
     <div class="group">
       <h2>File</h2>
       <div class="break"></div>
-      <File multiple status="danger" size="lg"/>
-      <File disabled size="md"/>
-      <File multiple status="success" size="sm"/>
-      <File multiple status="warning" size="sm"/>
-      <File multiple status="warning" size="sm" hover/>
-      <File multiple size="sm" selected/>
-
+      <File multiple status="danger" size="lg" bind:file />
+      <File disabled size="md" />
+      <File multiple status="success" size="sm" />
+      <File multiple status="warning" size="sm" />
+      <File multiple status="warning" size="sm" hover />
+      <File multiple size="sm" selected />
     </div>
     <div class="group">
       <h2>RadioButton</h2>
@@ -177,9 +186,8 @@
       <Text placeholder="Placeholder" bind:value size="md" status="success" />
       <Text placeholder="Placeholder" size="sm" bind:value status="warning" />
       <Text placeholder="Placeholder" size="sm" bind:value />
-      <Text placeholder="Placeholder" size="sm" bind:value selected/>
-      <Text placeholder="Placeholder" size="sm" bind:value hover/>
-
+      <Text placeholder="Placeholder" size="sm" bind:value selected />
+      <Text placeholder="Placeholder" size="sm" bind:value hover />
     </div>
     <div class="group">
       <h2>Long text - {value}</h2>
@@ -198,8 +206,8 @@
         status="warning"
       />
       <LongText placeholder="Placeholder" size="sm" bind:value />
-      <LongText placeholder="Placeholder" size="sm" bind:value selected/>
-      <LongText placeholder="Placeholder" size="sm" bind:value hover/>
+      <LongText placeholder="Placeholder" size="sm" bind:value selected />
+      <LongText placeholder="Placeholder" size="sm" bind:value hover />
     </div>
   </div>
 

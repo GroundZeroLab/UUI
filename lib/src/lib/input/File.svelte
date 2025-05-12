@@ -4,10 +4,10 @@
   import Button from "./Button.svelte";
 
   let {
-    file = $bindable<File | File[] | null>(null),
+    file = $bindable<FileList | null | undefined>(null),
     name,
     id = Math.random().toString(36).substring(2, 15),
-    accept,
+    accept = undefined,
     multiple = false,
     status = undefined,
     disabled = false,
@@ -16,10 +16,10 @@
     selected = false,
   } = $props<{
     label?: string;
-    file?: File | File[] | null;
+    file?: FileList | null | undefined;
     name?: string;
     id?: string;
-    accept?: string;
+    accept?: string | null | undefined;
     multiple?: boolean;
     status?: Status;
     disabled?: boolean;
@@ -30,13 +30,9 @@
 
   const onChange = (event: Event) => {
     const input = event.target as HTMLInputElement;
-    const files = input.files;
-    if (files && files.length > 0) {
-      if (multiple) {
-        file = Array.from(files);
-      } else {
-        file = files[0];
-      }
+    const f = input.files;
+    if (f) {
+      file = f;
     }
   };
 
@@ -77,7 +73,7 @@
   };
 
   $effect(() => {
-    if (!file.length) file = null;
+    if (!file || !file.length) file = null;
   });
 </script>
 
@@ -135,13 +131,13 @@
 />
 
 <style>
-  .file-input.sm :global(.box){
+  .file-input.sm :global(.box) {
     font-size: var(--font-size-sm) !important;
   }
-  .file-input.md :global(.box){
+  .file-input.md :global(.box) {
     font-size: var(--font-size-md) !important;
   }
-  .file-input.lg :global(.box){
+  .file-input.lg :global(.box) {
     font-size: var(--font-size-lg) !important;
   }
   .cont {
