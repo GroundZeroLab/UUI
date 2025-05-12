@@ -84,17 +84,17 @@
   ondragover={onDragOver}
   ondragenter={onDragEnter}
 >
-  {multiple}
-
   <Card bind:status {disabled} {hover} {selected}>
     <div class="cont" class:disabled>
       {#if file && file.length}
         <div class="name">
           {#each file as f, i}
             <div class="file-item">
-              <Button type="danger" onClick={() => deleteFile(i)}>
-                <span class="remove">✕</span>
-              </Button>
+              {#if multiple}
+                <Button type="danger" onClick={() => deleteFile(i)}>
+                  <span class="remove">✕</span>
+                </Button>
+              {/if}
               <p>{f.name}</p>
             </div>
           {/each}

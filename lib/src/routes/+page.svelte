@@ -19,7 +19,7 @@
     Table,
     ComboBox,
     ComboBoxElement,
-    File,
+    Files,
   } from "$lib/index.js";
   import { writable } from "svelte/store";
   import { onDestroy, onMount } from "svelte";
@@ -112,12 +112,12 @@
     <div class="group">
       <h2>File</h2>
       <div class="break"></div>
-      <File multiple status="danger" size="lg" bind:file />
-      <File disabled size="md" />
-      <File multiple status="success" size="sm" />
-      <File multiple status="warning" size="sm" />
-      <File multiple status="warning" size="sm" hover />
-      <File size="sm" selected />
+      <Files multiple status="danger" size="lg" bind:file />
+      <Files disabled size="md" />
+      <Files multiple status="success" size="sm" />
+      <Files multiple status="warning" size="sm" />
+      <Files multiple status="warning" size="sm" hover />
+      <Files size="sm" selected />
     </div>
     <div class="group">
       <h2>RadioButton</h2>
